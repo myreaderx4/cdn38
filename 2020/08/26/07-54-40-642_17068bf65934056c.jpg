@@ -1,0 +1,2411 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"c9b0d0532b",applicationID:"161735829"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(c(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(5),c=e(6),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,n){s[n]=i(p+n,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(l+"tracer",[u.now(),e,t],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&d("lcp",[t[t.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var n=Math.round(e.timeStamp),t={type:e.type};n<=p.now()?t.fid=p.now()-n:n>p.offset&&n<=Date.now()?(n-=p.offset,t.fid=p.now()-n):n=p.now(),g=!0,d("timing",["fi",n,t])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(4),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e){function n(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,n,!1)}n.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],5:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],6:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],7:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function t(t,r,i,o){if(!p.aborted||o){e&&e(t,r,i);for(var a=n(i),c=v(t),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[t]];return d&&d.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(t)}function y(e,n){u(e,function(e,t){n=n||"feature",w[t]=n,n in s||(s[n]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(5),s={},d={},p=n.exports=i();p.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(w,function(n,t){e[n]||(e[n]=t)});var t=a();f("mark",["onload",t+E.offset],null,"api"),f("timing",["load",t]);var r=l.createElement("script");r.src="https://"+e.agent,n.parentNode.insertBefore(r,n)}}function i(){"complete"===l.readyState&&o()}function o(){f("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-E.offset}var c=(new Date).getTime(),f=e("handle"),u=e(5),s=e("ee"),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,y=g&&g.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var h=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1177.min.js"},b=g&&y&&y[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:c,now:a,origin:h,features:{},xhrWrappable:b,userAgent:d};e(1),e(2),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),f("mark",["firstbyte",c],null,"api");var x=0,O=e(7)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(6),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof t?t(r,a):t||{}}catch(u){p([u,"",[r,a,i],c])}s(n+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(n+"err",[r,a,d],c),d}finally{s(n+"end",[r,a,f],c)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<n.length;f++)c=n[f],a=e[c],r(a)||(e[c]=t(a,u?c+i:i,o,c))}function s(t,r,i){if(!f||n){var o=f;f=!0;try{e.emit(t,r,i,n)}catch(a){p([a,t,r,i])}f=o}}function d(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){p([r])}for(var i in e)c.call(e,i)&&(n[i]=e[i]);return n}function p(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+        <meta name="twitter:card" content="summary_large_image">
+		
+	<!-- This site is optimized with the Yoast SEO plugin v14.3 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>怒濤の6月を振り返って　エディターズレター（2020年7月2日配信分） | WWD JAPAN.com</title>
+	<meta name="description" content="現地で起こっていることを伝えたい！と、6月はアメリカのBLM運動についての記事を重点的にピックアップしてお届けしました。" />
+	<meta name="robots" content="index, follow" />
+	<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="https://www.wwdjapan.com/articles/1109664" />
+	<meta property="og:locale" content="ja_JP" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="怒濤の6月を振り返って　エディターズレター（2020年7月2日配信分） | WWD JAPAN.com" />
+	<meta property="og:description" content="現地で起こっていることを伝えたい！と、6月はアメリカのBLM運動についての記事を重点的にピックアップしてお届けしました。" />
+	<meta property="og:url" content="https://www.wwdjapan.com/articles/1109664" />
+	<meta property="og:site_name" content="WWD JAPAN.com" />
+	<meta property="article:published_time" content="2020-08-26T00:00:01+00:00" />
+	<meta property="article:modified_time" content="2020-08-25T04:19:30+00:00" />
+	<meta property="og:image" content="https://media.wwdjapan.com/wp-content/uploads/2022/08/14145851/200814_us_og.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="1200" />
+	<meta property="fb:app_id" content="831558770195666" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.wwdjapan.com' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//media.wwdjapan.com' />
+<link rel='dns-prefetch' href='//adservice.google.co.jp' />
+<link rel='dns-prefetch' href='//aw.dw.impact-ad.jp' />
+<link rel='dns-prefetch' href='//cdn.treasuredata.com' />
+<link rel='dns-prefetch' href='//in.treasuredata.com' />
+<link rel='dns-prefetch' href='//connect.facebook.com' />
+<link rel='dns-prefetch' href='//www.facebook.com' />
+<link rel='dns-prefetch' href='//www.google-analytics.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//www.youtube.com' />
+<link rel="alternate" type="application/rss+xml" title="WWD JAPAN.com &raquo; フィード" href="https://www.wwdjapan.com/feed" />
+<!-- wwdjapan.com is managing ads with Advanced Ads 1.18.0 – https://wpadvancedads.com/ --><script>
+						advanced_ads_ready=function(){var fns=[],listener,doc=typeof document==="object"&&document,hack=doc&&doc.documentElement.doScroll,domContentLoaded="DOMContentLoaded",loaded=doc&&(hack?/^loaded|^c/:/^loaded|^i|^c/).test(doc.readyState);if(!loaded&&doc){listener=function(){doc.removeEventListener(domContentLoaded,listener);window.removeEventListener("load",listener);loaded=1;while(listener=fns.shift())listener()};doc.addEventListener(domContentLoaded,listener);window.addEventListener("load",listener)}return function(fn){loaded?setTimeout(fn,0):fns.push(fn)}}();
+						</script>
+		<link rel='stylesheet' id='wwdj-roboto-fonts-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A300%2C300i%2C400%2C400i%2C500%2C500i%2C700%2C700i&#038;text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ012345678910' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://www.wwdjapan.com/wp-includes/css/dist/block-library/style.min.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='ssp-block-style-css'  href='https://www.wwdjapan.com/wp-content/plugins/seriously-simple-podcasting/assets/css/block_style.css?ver=fa8359129b99466ccba685a1ffe3da90' type='text/css' media='all' />
+<link rel='stylesheet' id='ssp-block-fonts-style-css'  href='https://www.wwdjapan.com/wp-content/plugins/seriously-simple-podcasting/assets/css/icon_fonts.css?ver=fa8359129b99466ccba685a1ffe3da90' type='text/css' media='all' />
+<link rel='stylesheet' id='ssp-block-gizmo-fonts-style-css'  href='https://www.wwdjapan.com/wp-content/plugins/seriously-simple-podcasting/assets/fonts/Gizmo/gizmo.css?ver=fa8359129b99466ccba685a1ffe3da90' type='text/css' media='all' />
+<link rel='stylesheet' id='ssp-frontend-player-css'  href='https://www.wwdjapan.com/wp-content/plugins/seriously-simple-podcasting/assets/css/player.css?ver=2.2.0' type='text/css' media='all' />
+<link rel='stylesheet' id='normalize-css'  href='https://www.wwdjapan.com/wp-content/themes/wwdj-pc/assets/css/normalize.css?ver=8.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='slick-css'  href='https://www.wwdjapan.com/wp-content/themes/wwdj-pc/assets/css/slick.css?ver=1.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='photoswipe-css'  href='https://www.wwdjapan.com/wp-content/themes/wwdj/assets/css/photoswipe.css?ver=4.1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='photoswipe-skin-css'  href='https://www.wwdjapan.com/wp-content/themes/wwdj/assets/css/default-skin/default-skin.css?ver=4.1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='wwdj-css'  href='https://www.wwdjapan.com/wp-content/themes/wwdj-pc/style.min.css?ver=1598346148' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/plugins/advanced-ads/public/assets/js/advanced.js?ver=1.18.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var advanced_ads_responsive = {"reload_on_resize":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/plugins/advanced-ads-responsive/public/assets/js/script.js?ver=1.9'></script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/plugins/advanced-ads-pro/assets/advanced-ads-pro.js?ver=2.8.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var advanced_ads_pro_ajax_object = {"ajax_url":"https:\/\/www.wwdjapan.com\/wp-admin\/admin-ajax.php","lazy_load_module_enabled":"","lazy_load":{"default_offset":0,"offsets":[]},"moveintohidden":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/plugins/advanced-ads-pro/modules/cache-busting/inc/base.min.js?ver=2.8.1'></script>
+<link rel='https://api.w.org/' href='https://www.wwdjapan.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.wwdjapan.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.wwdjapan.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.4.2" />
+<meta name="generator" content="Seriously Simple Podcasting 2.2.0" />
+<link rel='shortlink' href='https://www.wwdjapan.com/?p=1109664' />
+<link rel="alternate" type="application/json+oembed" href="https://www.wwdjapan.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.wwdjapan.com%2Farticles%2F1109664" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.wwdjapan.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.wwdjapan.com%2Farticles%2F1109664&#038;format=xml" />
+
+<link rel="alternate" type="application/rss+xml" title="Podcast RSS feed" href="https://www.wwdjapan.com/feed/podcast" />
+
+            <meta name="keywords" content="フォーカス,コラム,Editor's Letter,VIEWS ON WWD U.S.">
+        
+    <!--==================================================
+    This script loads ad-serving JS library for communicating with ad server and rendering
+    its response. You may place it in your <header> or you may place it once per section. If it exists more than once on your page, it will only be loaded once.
+    ===================================================-->
+    <script type="text/javascript">
+        (function(b){function f(){var d=this;d.stack={};d.displayAd=function(){};d.requestAds=function(a){var c=b[b.a];if(0===(a||{}).sectionId||(a||{}).sectionId)try{c.requestAds.call(c,a)}catch(e){d.stack[a.sectionId+(a.instance?"_"+a.instance:"")]=a}};d.setGlobalCustomParams=function(a){var c=b[b.a];try{c.setGlobalCustomParams.call(c,a)}catch(e){d.globalCustomParams=a||{}}}}function g(b){var a=e.createElement("script"),c=e.getElementsByTagName("script")[0];a.type="text/javascript";a.src=b;a.async=!0;-1!==
+        navigator.userAgent.indexOf("Opera")?setTimeout(function(){c.parentNode.insertBefore(a,c)},0):c.parentNode.insertBefore(a,c)}var e=b.document;try{b.__putPixel(200100)}catch(k){}b.a="__ASL__";var h=("https:"===e.location.protocol?"https:":"http:")+"//img.ak.impact-ad.jp/fh/showad_d2a8a1bd.js";if("undefined"===typeof b.__ASL_LIB_LOADED){g(h);try{b.__putPixel(200200)}catch(l){}}b.__ASL_LIB_LOADED=1;b["TagProvider"]=b["TagProvider"]||new f})(window);
+    </script>
+
+    <script type="text/javascript">
+jQuery(document).ready(function($){
+    if (localStorage.getItem('mpp') || localStorage.getItem('MPP-SessionId') || localStorage.getItem('MPP-SessionId-Expiry') || sessionStorage.getItem('mpp') || $.cookie('MPP-SessionId')) {
+        localStorage.removeItem('mpp')
+        localStorage.removeItem('MPP-SessionId')
+        localStorage.removeItem('MPP-SessionId-Expiry')
+        sessionStorage.removeItem('mpp')
+    }
+});
+</script>
+        <!-- OUTBRAIN HEADER -->
+        <script type="text/javascript" async="async" src="//widgets.outbrain.com/outbrain.js"></script>
+        <!-- End OUTBRAIN HEADER -->
+            <script type="application/ld+json">
+	{
+	"@context": "http://schema.org",
+	"@type": "WebSite",
+	"url": "https://www.wwdjapan.com",
+	"potentialAction": {
+		"@type": "SearchAction",
+		"target": "https://www.wwdjapan.com/search?s={search_term}",
+		"query-input": "required name=search_term"
+	},
+	"name": "WWD JAPAN",
+	"description": "国内・海外の最新ファッション＆ビューティ・トレンドをはじめ、業界ニュースをいち早くお届け。最新コレクションやスナップ、キャリア情報まで、全てを網羅！"
+	}
+	</script>
+
+        <script>
+        window.dataLayer2 = window.dataLayer2 || [];
+        dataLayer2.push({
+            'hashURL':  '',
+            'wwd_id':  '',
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer2','GTM-PHXWSCX');</script>
+    <!-- End Google Tag Manager -->
+            <script>
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'hashURL':  '/articles/1109664#focus__author--chiharuodashima__subcategory--column',
+            'wwd_id':  '',
+            'chartbeats_sections':  'フォーカス',
+            'chartbeats_authors':  '小田島 千春'
+        })
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-W5J2872');
+    </script>
+    <!-- End Google Tag Manager -->
+    <script type="text/javascript">
+		var advadsCfpQueue = [];
+		var advadsCfpAd = function( adID ){
+			if ( 'undefined' == typeof advadsProCfp ) { advadsCfpQueue.push( adID ) } else { advadsProCfp.addElement( adID ) }
+		};
+		</script>
+		<link rel="icon" href="https://media.wwdjapan.com/wp-content/uploads/2019/06/03131836/cropped-fav.android-chrome-512x512-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://media.wwdjapan.com/wp-content/uploads/2019/06/03131836/cropped-fav.android-chrome-512x512-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://media.wwdjapan.com/wp-content/uploads/2019/06/03131836/cropped-fav.android-chrome-512x512-180x180.png" />
+<meta name="msapplication-TileImage" content="https://media.wwdjapan.com/wp-content/uploads/2019/06/03131836/cropped-fav.android-chrome-512x512-270x270.png" />
+	</head>
+	<body class="post-template-default single single-post postid-1109664 single-format-standard digitaldaily-print-off">
+		<div id="page" class="hfeed site">
+		<a class="skip-link screen-reader-text" href="#content">コンテンツへスキップ</a>
+			<header id="masthead" class="site-header">
+				<p class="site-logo"><a href="https://www.wwdjapan.com/" rel="home"></a></p>
+				<div class="sinking-menu-box">
+											<nav id="main-menu-container" class="main-menu-container">
+<ul id="main-menu" class="main-menu">
+<li class="has-children" aria-selected="false" aria-controls="news-nav-content">
+<a href="https://www.wwdjapan.com/category/news">ニュース</a>
+<div id="news-nav-content" class="hover-nav-content" aria-hidden="true">
+<nav>
+<ul>
+<li>
+<a href="https://www.wwdjapan.com/category/news">全て</a>
+</li>
+	<li class="cat-item cat-item-27026"><a href="https://www.wwdjapan.com/category/news/fashion" title="ファッションニュースの一覧ページ。ファッショントレンドやファッションビジネスなど最新のファッション記事を掲載。10秒で読める要約された記事でスマートな速読もできます。">ファッション</a>
+</li>
+	<li class="cat-item cat-item-27024"><a href="https://www.wwdjapan.com/category/news/beauty" title="ビューティニュースの一覧ページ。ビューティについて美容やコスメブランド、コスメコレクションに関する情報など最新のビューティ記事を掲載。10秒で読める要約された記事でスマートな速読もできます。">ビューティ</a>
+</li>
+	<li class="cat-item cat-item-27023"><a href="https://www.wwdjapan.com/category/news/business" title="ビジネスに関するニュースの一覧ページ。ファッションビジネスやビューティビジネスについて最新のニュース記事を掲載。10秒で読める要約された記事でスマートな速読もできます。">ビジネス</a>
+</li>
+	<li class="cat-item cat-item-27012"><a href="https://www.wwdjapan.com/category/news/from-us" title="WWD US版ニュースの一覧ページ。ファッション業界の注目ニュースをいち早く紹介。10秒で読める要約された記事でスマートな速読もできます。">US版</a>
+</li>
+	<li class="cat-item cat-item-27028"><a href="https://www.wwdjapan.com/category/news/life" title="ライフに関するニュースの一覧ページ。生活をより楽しく、心地よく、また刺激になる商品やイベントの最新情報を掲載。10秒で読める要約された記事でスマートな速読もできます。">ライフ</a>
+</li>
+	<li class="cat-item cat-item-27017"><a href="https://www.wwdjapan.com/category/news/collection_news" title="コレクションの一覧ページ。世界中の最新コレクションや注目のブランド、注目のシーズンをお届け。ブランドやシーズンから簡単に検索できます。">コレクション</a>
+</li>
+	<li class="cat-item cat-item-27019"><a href="https://www.wwdjapan.com/category/news/sports" title="スポーツに関するニュースの一覧ページ。スポーツ用品やスポーツメーカーなどスポーツファッションに関する注目ニュース記事を掲載。10秒で読める要約された記事でスマートな速読もできます。">スポーツ</a>
+</li>
+	<li class="cat-item cat-item-27015"><a href="https://www.wwdjapan.com/category/news/interior" title="インテリアに関するニュースの一覧ページ。ファッションブランドとのコラボアイテムやインテリアグッズ、インテリアメーカーについて最新のニュースを掲載。10秒で読める要約された記事でスマートな速読もできます。">インテリア</a>
+</li>
+	<li class="cat-item cat-item-27027"><a href="https://www.wwdjapan.com/category/news/music" title="音楽に関するニュースの一覧ページ。フェスファッションなど音楽イベントでのファッション取材、ミュージシャンによるコラボグッズ、ツアーグッズ情報、インタビュー記事まで最新のニュースを掲載。10秒で読める要約された記事でスマートな速読もできます。">ミュージック</a>
+</li>
+	<li class="cat-item cat-item-27020"><a href="https://www.wwdjapan.com/category/news/digital" title="デジタルに関するニュースの一覧ページ。ファッションやビューティー、アパレル業界でのAI（人工知能）などのIT・デジタル事業やサービスについて最新のニュースを掲載。10秒で読める要約された記事でスマートな速読もできます。">デジタル</a>
+</li>
+	<li class="cat-item cat-item-27025"><a href="https://www.wwdjapan.com/category/news/food" title="フードに関するニュースの一覧ページ。ファッションやビューティーのコラボ商品やスイーツ、フード、フードイベントに関する最新のニュースを掲載。10秒で読める要約された記事でスマートな速読もできます。">フード</a>
+</li>
+	<li class="cat-item cat-item-27013"><a href="https://www.wwdjapan.com/category/news/art" title="アートに関するニュースの一覧ページ。ファッションに関するアーティストとのコラボ商品やイベント、展覧会、ギャラリーなど開催中や間近のアート情報についていち早くお届け。10秒で読める要約された記事でスマートな速読もできます。">アート</a>
+</li>
+	<li class="cat-item cat-item-27016"><a href="https://www.wwdjapan.com/category/news/watch-jewelry" title="新作の腕時計やジュエリーに関するニュースの一覧ページ。注目ブランドの新作腕時計や新作ジュエリーの紹介、ショップオープン情報など企業動向についてのニュースを掲載。10秒で読める要約された記事でスマートな速読もできます。">ウオッチ &amp; ジュエリー</a>
+</li>
+	<li class="cat-item cat-item-27382"><a href="https://www.wwdjapan.com/category/news/underwear" title="アンダーウエア、下着に関するニュースの一覧ページ。下着ブランドの新作や下着モデルについての記事まで話題になっているニュースを掲載。10秒で読める要約された記事でスマートな速読もできます。">アンダーウエア</a>
+</li>
+	<li class="cat-item cat-item-27014"><a href="https://www.wwdjapan.com/category/news/eyewear" title="アイウエア、眼鏡に関するニュースの一覧ページ。新作のサングラスや眼鏡など話題になっているアイウエアについて速報で掲載。10秒で読める要約された記事でスマートな速読もできます。">アイウエア</a>
+</li>
+	<li class="cat-item cat-item-27018"><a href="https://www.wwdjapan.com/category/news/sneakers" title="スニーカーに関するニュースの一覧ページ。人気スニーカーの新作やコラボアイテムについて限定販売からオークションまで話題になっているスニーカーについて掲載。10秒で読める要約された記事でスマートな速読もできます。">スニーカー</a>
+</li>
+	<li class="cat-item cat-item-27021"><a href="https://www.wwdjapan.com/category/news/travel" title="旅行、トラベルに関するニュースの一覧ページ。話題のホテルやホテルとのコラボ企画、航空会社や空港に関するトピック、旅行会社や旅行誌のイベントまで掲載。10秒で読める要約された記事でスマートな速読もできます。">トラベル</a>
+</li>
+	<li class="cat-item cat-item-27022"><a href="https://www.wwdjapan.com/category/news/bag" title="バッグに関するニュースの一覧ページ。新作バックから話題のコラボアイテム、限定コレクションについての販売やストア情報について掲載。10秒で読める要約された記事でスマートな速読もできます。">バッグ</a>
+</li>
+
+</ul>
+</nav>
+<div class="wwdj-child-navigation-posts wwdj-child-navigation-posts-news">
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1113151" rel="bookmark">「ランバン オン ブルー」のアンバサダーに北村匠海が就任　9月から全国でキャンペーン展開<span class="icon-paywall-area" data-paywall-id="1113151"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%b3%e3%83%9e%e3%83%bc%e3%82%b7%e3%83%a3%e3%83%ab" rel="tag">コマーシャル</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-26T16:00:41+09:00">47分前</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1113151" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1113151" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/26142340/200826_lanvin_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1113035" rel="bookmark">「ユニクロ」が雑誌「LifeWearマガジン」第3号を8月28日から配布　全世界で137万部を配布予定<span class="icon-paywall-area" data-paywall-id="1113035"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e6%96%b0%e4%bd%9c" rel="tag">新作</a><a href="https://www.wwdjapan.com/topic_tag/%e9%9b%91%e8%aa%8c%e3%83%bb%e6%9b%b8%e7%b1%8d%e3%83%bb%e5%aa%92%e4%bd%93" rel="tag">雑誌・書籍・媒体</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-26T14:00:42+09:00">2時間前</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1113035" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1113035" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/25184012/200825_UQ_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1113118" rel="bookmark">ユニクロがデザイナー、ジル・サンダーとの協業ライン「+J」を今秋復活<span class="icon-paywall-area" data-paywall-id="1113118"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%83%96%e3%83%a9%e3%83%b3%e3%83%89%e5%be%a9%e6%b4%bb" rel="tag">ブランド復活</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-26T12:55:43+09:00">3時間前</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1113118" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1113118" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/26140904/200826_uniqlo_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1109589" rel="bookmark">ヤギがナノファイバーを使用した高機能マスク発売　薄くて軽量、ウイルスをブロック<span class="icon-paywall-area" data-paywall-id="1109589"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e6%96%b0%e4%bd%9c" rel="tag">新作</a><a href="https://www.wwdjapan.com/topic_tag/mask" rel="tag">マスク</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-26T11:00:49+09:00">5時間前</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1109589" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1109589" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/14130914/200814_yagi_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+</div>
+
+</div>
+</li>
+<li class="has-children" aria-selected="false" aria-controls="ranking-nav-content">
+<a href="https://www.wwdjapan.com/ranking">ランキング</a>
+<div id="ranking-nav-content" class="hover-nav-content" aria-hidden="true">
+<div class="wwdj-child-navigation-posts wwdj-child-navigation-posts-ranking">
+					<article class="wwdj-post wwdj-navigation-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1113118" rel="bookmark">ユニクロがデザイナー、ジル・サンダーとの協業ライン「+J」を今秋復活<span class="icon-paywall-area" data-paywall-id="1113118"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%83%96%e3%83%a9%e3%83%b3%e3%83%89%e5%be%a9%e6%b4%bb" rel="tag">ブランド復活</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-26T12:55:43+09:00">3時間前</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1113118" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1113118" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/26140904/200826_uniqlo_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1112706" rel="bookmark">日本発 “世界最強グローバルEC”を率いる起業家・原田真帆人の挑戦<span class="icon-paywall-area" data-paywall-id="1112706"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%93%e3%83%a5%e3%83%bc" rel="tag">インタビュー</a><a href="https://www.wwdjapan.com/topic_tag/ec" rel="tag">EC</a><a href="https://www.wwdjapan.com/topic_tag/%e4%bc%81%e6%a5%ad%e5%8b%95%e5%90%91" rel="tag">企業動向</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-26T12:00:44+09:00">4時間前</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112706" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1112706" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/26084048/200825_harada_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1112746" rel="bookmark">「ユニクロ ユー」の秋冬コレクションは着心地を重視　クラシックなデザインと色使い<span class="icon-paywall-area" data-paywall-id="1112746"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e6%96%b0%e4%bd%9c" rel="tag">新作</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-25T21:00:12+09:00">19時間前</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112746" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1112746" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/25170129/OG-27.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1113015" rel="bookmark">日本初、界面活性剤を配合していない99％美容液のホットクレンジングがロート製薬から登場<span class="icon-paywall-area" data-paywall-id="1113015"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e6%96%b0%e3%83%96%e3%83%a9%e3%83%b3%e3%83%89%e3%83%bb%e6%96%b0%e3%83%a9%e3%82%a4%e3%83%b3" rel="tag">新ブランド・新ライン</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-25T19:30:08+09:00">21時間前</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1113015" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1113015" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/25180041/ROHTO_OG.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1111946" rel="bookmark">人気ドラマ「わたナギ」で多部未華子が着用　「クーシオ」がジェネレーションZにじわじわ認知拡大<span class="icon-paywall-area" data-paywall-id="1111946"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%83%9d%e3%83%83%e3%83%97%e3%82%a2%e3%83%83%e3%83%97" rel="tag">ポップアップ</a><a href="https://www.wwdjapan.com/topic_tag/tv" rel="tag">TV・ラジオ</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-25T19:00:45+09:00">21時間前</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1111946" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1111946" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/24110727/200824_qussio_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+</div>
+
+</div>
+</li>
+<li class="has-children" aria-selected="false" aria-controls="collection-nav-content">
+<a href="https://www.wwdjapan.com/category/collection">コレクション</a>
+<div id="collection-nav-content" class="hover-nav-content" aria-hidden="true">
+<nav class="menu-megamenu-navigation-container"><ul id="menu-megamenu-navigation" class=""><li id="menu-item-866786" class="parent-item"><a href="/category/collection">全て</a></li>
+<li id="menu-item-866787" class="parent-item"><a href="/category/collection?city=paris">パリ</a></li>
+<li id="menu-item-866788" class="parent-item"><a href="/category/collection?city=tokyo">東京</a></li>
+<li id="menu-item-866789" class="parent-item"><a href="/category/collection?city=milan">ミラノ</a></li>
+<li id="menu-item-866790" class="parent-item"><a href="/category/collection?city=newyork">ニューヨーク</a></li>
+<li id="menu-item-866791" class="parent-item"><a href="/category/collection?city=london">ロンドン</a></li>
+<li id="menu-item-866792" class="parent-item"><a href="/category/collection?event_tag=school">学校</a></li>
+<li id="menu-item-902884" class="parent-item"><a href="/category/collection?topic_tag=collectionbeauty">ビューティ</a></li>
+</ul></nav>
+<div class="wwdj-child-navigation-posts wwdj-child-navigation-posts-collection">
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1112587" rel="bookmark">「ウィザード」2020-21年秋冬コレクション<span class="icon-paywall-area" data-paywall-id="1112587"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/category/collection" rel="tag">COLLECTION</a>
+
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-25T14:00:48+09:00">2020/08/25</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112587" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1112587" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/25132455/WIZZARD-2020-21-FW-COLLECTION-OG.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1112408" rel="bookmark">「C.P. カンパニー」2020-21年秋冬コレクション<span class="icon-paywall-area" data-paywall-id="1112408"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/category/collection" rel="tag">COLLECTION</a>
+
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-24T22:00:08+09:00">2020/08/24</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112408" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1112408" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/24174939/C.P.COMPANY-2020-21-FW-COLLECTION-OG.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1111257" rel="bookmark">「チノ」2021年春夏メンズ・コレクション<span class="icon-paywall-area" data-paywall-id="1111257"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/category/collection" rel="tag">COLLECTION</a>
+
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-23T18:00:33+09:00">2020/08/23</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1111257" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1111257" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/20152250/jxwiojxo.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1111598" rel="bookmark">「フミト ガンリュウ」2020-21年秋冬メンズ・コレクション<span class="icon-paywall-area" data-paywall-id="1111598"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/category/collection" rel="tag">COLLECTION</a>
+
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-21T11:45:06+09:00">2020/08/21</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1111598" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1111598" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/21112553/Look13_AW20_Fumito-Ganryu_OG.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+</div>
+
+</div>
+</li>
+<li class="has-children" aria-selected="false" aria-controls="focus-nav-content">
+<a href="https://www.wwdjapan.com/category/focus">フォーカス</a>
+<div id="focus-nav-content" class="hover-nav-content" aria-hidden="true">
+<nav>
+<ul>
+<li>
+<a href="https://www.wwdjapan.com/category/focus">全て</a>
+</li>
+	<li class="cat-item cat-item-27030"><a href="https://www.wwdjapan.com/category/focus/interview" title="ファッションやビューティに関するインタビューの一覧ページ。話題の人物や取り組み、事業に着目しインタビューしています。ファッションデザイナーやブランド設立者、ジュエリーからビューティまでファッションに関連するあらゆるインタビュー記事を掲載。10秒で読める要約された記事でスマートな速読もできます。">インタビュー</a>
+</li>
+	<li class="cat-item cat-item-27031"><a href="https://www.wwdjapan.com/category/focus/column" title="コラムの一覧ページ。ファッション、アパレル業界をメインに美容やコスメに関するコラムを掲載しています。いつもと違う視点でファッションやビューティについて考えることに役立ちます。10秒で読める要約された記事でスマートな速読もできます。">コラム</a>
+</li>
+
+<li class="cat-item"><a href="/series" title="注目の連載など、ファッション＆ビューティのディープな記事をお届け。">連載</a>
+</li></ul>
+</nav>
+<div class="wwdj-child-navigation-posts wwdj-child-navigation-posts-focus">
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1112706" rel="bookmark">日本発 “世界最強グローバルEC”を率いる起業家・原田真帆人の挑戦<span class="icon-paywall-area" data-paywall-id="1112706"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%93%e3%83%a5%e3%83%bc" rel="tag">インタビュー</a><a href="https://www.wwdjapan.com/topic_tag/ec" rel="tag">EC</a><a href="https://www.wwdjapan.com/topic_tag/%e4%bc%81%e6%a5%ad%e5%8b%95%e5%90%91" rel="tag">企業動向</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-26T12:00:44+09:00">4時間前</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112706" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1112706" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/26084048/200825_harada_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1109664" rel="bookmark">怒濤の6月を振り返って　エディターズレター（2020年7月2日配信分）<span class="icon-paywall-area" data-paywall-id="1109664"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/editors-letter" rel="tag">Editor's Letter</a><a href="https://www.wwdjapan.com/topic_tag/views-on-wwd-u-s" rel="tag">VIEWS ON WWD U.S.</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-26T09:00:01+09:00">7時間前</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1109664" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1109664" data-bg="https://media.wwdjapan.com/wp-content/uploads/2022/08/14145851/200814_us_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1112263" rel="bookmark">ジャニーズが「美容クリニック行くんです」って言っちゃうんです　エディターズレター（2020年7月6日配信分）<span class="icon-paywall-area" data-paywall-id="1112263"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/editors-letter" rel="tag">Editor's Letter</a><a href="https://www.wwdjapan.com/topic_tag/her-opinion" rel="tag">HER OPINION</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-25T20:00:30+09:00">20時間前</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112263" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1112263" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/25153912/200825_heropinion_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1112423" rel="bookmark">“ニューノーマル”時代の売れ筋を探せ！　薄色レンズのサングラスとイヤカフがマスクとのコーデで浮上<span class="icon-paywall-area" data-paywall-id="1112423"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%83%88%e3%83%ac%e3%83%b3%e3%83%89" rel="tag">トレンド</a><a href="https://www.wwdjapan.com/topic_tag/%e5%a3%b2%e3%82%8c%e7%ad%8b" rel="tag">売れ筋</a><a href="https://www.wwdjapan.com/topic_tag/colmn" rel="tag">コラム</a><a href="https://www.wwdjapan.com/topic_tag/covid-19" rel="tag">新型コロナウイルス</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-25T09:00:19+09:00">2020/08/25</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112423" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1112423" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/24180938/v3cjrnfojr3o.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+</div>
+
+</div>
+</li>
+<li class="has-children" aria-selected="false" aria-controls="snap-nav-content">
+<a href="https://www.wwdjapan.com/category/snap">スナップ</a>
+<div id="snap-nav-content" class="hover-nav-content" aria-hidden="true">
+<nav>
+<ul>
+<li>
+<a href="https://www.wwdjapan.com/category/snap">全て</a>
+</li>
+	<li class="cat-item cat-item-27008"><a href="https://www.wwdjapan.com/category/snap/partysnap" title="パーティーのスナップ一覧ページ。オープニングパーティや新作発売イベントなど、あらゆるファッションイベントでのセレブパーティースナップ、ファッションスナップを掲載しています。10秒で読める要約された記事でスマートな速読もできます。">パーティ</a>
+</li>
+	<li class="cat-item cat-item-27006"><a href="https://www.wwdjapan.com/category/snap/eventsnap" title="イベントのスナップ一覧ページ。新作イベントやショップのオープニングイベント、ポップアップストア、ショップイベントなどのイベントスナップを掲載しています。">イベント</a>
+</li>
+	<li class="cat-item cat-item-27007"><a href="https://www.wwdjapan.com/category/snap/streetsnap" title="ストリートスナップの一覧ページ。ファッショニスタのスナップについて世界中の都市から最新ストリートスナップ、リアルクローズを掲載しています。">ストリート</a>
+</li>
+	<li class="cat-item cat-item-27009"><a href="https://www.wwdjapan.com/category/snap/fashionweeksnap" title="ファッション・ウイークスナップの一覧ページ。ファッションウイークに集まるトレンドに敏感なセレブの最新スナップを掲載しています。">ファッション・ウイーク</a>
+</li>
+	<li class="cat-item cat-item-27010"><a href="https://www.wwdjapan.com/category/snap/fessnap" title="フェススナップの一覧ページ。国内外の人気音楽フェスでの最新フェスファッションから自由なスタイルを楽しむ来場者のスナップを掲載しています。">フェス</a>
+</li>
+
+</ul>
+</nav>
+<div class="wwdj-child-navigation-posts wwdj-child-navigation-posts-snap">
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1111695" rel="bookmark">コロナ禍で世界中のファッショニスタにも自転車ブーム　NYからベルリンまで、真夏のサイクリングスタイル今昔スナップ<span class="icon-paywall-area" data-paywall-id="1111695"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/streetsnap" rel="tag">ストリートスナップ</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-23T20:00:34+09:00">2020/08/23</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1111695" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1111695" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/21143515/200821_cycle_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1109652" rel="bookmark">ウィズコロナ初のリアルでのファッション・ウイーク来場者は何着てる？　コペンハーゲンではマスクよりもビーサンが人気<span class="icon-paywall-area" data-paywall-id="1109652"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%83%88%e3%83%ac%e3%83%b3%e3%83%89" rel="tag">トレンド</a><a href="https://www.wwdjapan.com/topic_tag/fashionweeksnap" rel="tag">ファッション・ウイーク・スナップ</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-16T20:00:46+09:00">2020/08/16</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1109652" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1109652" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/14154710/200814_CPHFW_OG-1.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1090641" rel="bookmark">レインボーカラーで彩られる「プライド パレード」　20年はBLM運動と融合<span class="icon-paywall-area" data-paywall-id="1090641"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/eventsnap" rel="tag">イベントスナップ</a><a href="https://www.wwdjapan.com/topic_tag/lgbtq" rel="tag">LGBTQ</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-06-24T22:00:03+09:00">2020/06/24</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1090641" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1090641" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/06/24155750/200624_ablm_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1085745" rel="bookmark">アメリカが変わる時　全米で広がるBLM運動を捉える<span class="icon-paywall-area" data-paywall-id="1085745"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e7%a4%be%e4%bc%9a%e6%83%85%e5%8b%a2" rel="tag">社会情勢</a><a href="https://www.wwdjapan.com/topic_tag/streetsnap" rel="tag">ストリートスナップ</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-06-10T16:00:32+09:00">2020/06/10</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1085745" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1085745" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/06/09172450/200609_photo_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+</div>
+
+</div>
+</li>
+<li class="has-children" aria-selected="false" aria-controls="career-nav-content">
+<a href="https://www.wwdjapan.com/career">キャリア</a>
+<div id="career-nav-content" class="hover-nav-content" aria-hidden="true">
+<div class="wwdj-child-navigation-posts wwdj-child-navigation-posts-career">
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1107196" rel="bookmark">センスと体形でブランドを体現するプラスサイズ販売員　プニュズ吉澤綾花<span class="icon-paywall-area" data-paywall-id="1107196"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%93%e3%83%a5%e3%83%bc" rel="tag">インタビュー</a><a href="https://www.wwdjapan.com/topic_tag/%e3%82%ad%e3%83%a3%e3%83%aa%e3%82%a2" rel="tag">キャリア</a><a href="https://www.wwdjapan.com/topic_tag/%e3%83%95%e3%82%a1%e3%83%83%e3%82%b7%e3%83%a7%e3%83%b3%ef%bc%86%e3%83%93%e3%83%a5%e3%83%bc%e3%83%86%e3%82%a3%e3%82%a2%e3%83%89%e3%83%90%e3%82%a4%e3%82%b6%e3%83%bc%e3%80%81%e8%b2%a9%e5%a3%b2%e5%93%a1" rel="tag">ファッション＆ビューティアドバイザー、販売員</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-07T08:00:07+09:00">2020/08/07</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1107196" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1107196" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/05200536/200805_punyus_OG2.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1043837" rel="bookmark">マーケティング会社ロゾパンサンがプランナーを募集　ファッションに強みを持つ同社で顧客の心を掴むコミュニケーション戦略を描く<span class="icon-paywall-area" data-paywall-id="1043837"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/recruit" rel="tag">求人</a><a href="https://www.wwdjapan.com/topic_tag/%e3%82%ad%e3%83%a3%e3%83%aa%e3%82%a2" rel="tag">キャリア</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-03-04T11:00:48+09:00">2020/03/04</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1043837" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1043837" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/02/27110311/OG-249.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1037714" rel="bookmark">「H&#038;M」が更なる出店を視野に全国でデパートメントマネジャーを募集　グローバル企業らしいフラットな環境<span class="icon-paywall-area" data-paywall-id="1037714"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/recruit" rel="tag">求人</a><a href="https://www.wwdjapan.com/topic_tag/%e3%82%ad%e3%83%a3%e3%83%aa%e3%82%a2" rel="tag">キャリア</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-02-27T15:00:01+09:00">2020/02/27</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1037714" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1037714" data-bg="https://media.wwdjapan.com/wp-content/uploads/2019/02/12141329/190212_hm_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1037108" rel="bookmark">「タトラス」が販売スタッフを募集　店内ディスプレーやSNSでの情報発信など幅広い業務を担当<span class="icon-paywall-area" data-paywall-id="1037108"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/recruit" rel="tag">求人</a><a href="https://www.wwdjapan.com/topic_tag/%e3%82%ad%e3%83%a3%e3%83%aa%e3%82%a2" rel="tag">キャリア</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-02-27T11:00:34+09:00">2020/02/27</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1037108" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1037108" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/02/20182405/OG-191.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-navigation-articles has-post-thumbnail">
+						<header class="entry-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1036089" rel="bookmark">「エルベシャプリエ」がウェブ制作スタッフを募集　販促企画や接客などにも携わり、幅広いスキルを磨く<span class="icon-paywall-area" data-paywall-id="1036089"></span></a></div>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/recruit" rel="tag">求人</a><a href="https://www.wwdjapan.com/topic_tag/%e3%82%ad%e3%83%a3%e3%83%aa%e3%82%a2" rel="tag">キャリア</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-02-25T11:00:04+09:00">2020/02/25</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1036089" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1036089" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/02/20115942/200220_herve_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+</div>
+
+</div>
+</li>
+<li class="not-children sep"><a href="https://www.wwdjapan.com/subscribe">紙面紹介</a></li>
+<li class="not-children"><a href="https://www.wwdjapan.com/s/505009">定期購読</a></li>
+<li class="not-children search"><button type="button" class="wwdj-button wwdj-button-icon wwdj-button-icon__search" aria-selected="false" aria-controls="wwdj-search-box" role="button"></button></li>
+<li class="not-children login"><a href="https://www.wwdjapan.com/account/login/input">ログイン</a></li>
+
+</ul>
+</nav>
+									</div><!-- .sinking-menu -->
+				<div class="floating-menu-box">
+					<p class="site-logo"><a href="https://www.wwdjapan.com/" rel="home"></a></p>
+											<nav id="floating-menu-container" class="floating-menu-container"><ul id="floating-menu" class="floating-menu"><li id="menu-item-866687" class="parent-item"><a href="https://www.wwdjapan.com/category/news">ニュース</a></li>
+<li id="menu-item-866692" class="parent-item"><a href="/ranking">ランキング</a></li>
+<li id="menu-item-866688" class="parent-item"><a href="https://www.wwdjapan.com/category/collection">コレクション</a></li>
+<li id="menu-item-866689" class="current-menu-parent parent-item"><a href="https://www.wwdjapan.com/category/focus">フォーカス</a></li>
+<li id="menu-item-866690" class="parent-item"><a href="https://www.wwdjapan.com/category/snap">スナップ</a></li>
+<li id="menu-item-866691" class="parent-item"><a href="https://www.wwdjapan.com/category/career">キャリア</a></li>
+<li id="menu-item-866693" class="parent-item"><a href="/subscribe">紙面紹介</a></li>
+<li id="menu-item-866694" class="parent-item"><a href="/s/505009">定期購読</a></li>
+</ul></nav>									</div><!-- .floating-menu -->
+			</header><!-- #masthead -->
+			<div id="wwdj-search-box" class="wwdj-search-box" aria-hidden="true">
+				
+
+<form role="search" method="get" class="search-form" action="https://www.wwdjapan.com/search">
+	<label for="search-form-5f461471b407f">
+		WWD JAPAN.com <span>SEARCH</span><span class="bata">BETA</span>
+	</label>
+	<input type="text" id="search-form-5f461471b407f" class="search-field" value="" name="s" />
+	<input type="hidden" name="limit" value="15">
+	<input type="hidden" name="offset" value="0">
+	<input type="hidden" name="orderby" value="published_date">
+	<input type="hidden" name="order" value="desc">
+	<button type="submit" class="search-submit"></button>
+</form>
+			</div>
+			<div id="content" class="site-content">
+											<div class="wwdj-posts-pickups">
+  <div class="wwdj-posts-pickups__header"><span>PICK UP</span></div>
+<div class="content">
+					<article>
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1112706" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/26084048/200825_harada_og.jpg?w=750" >
+
+
+</a>
+</div>
+						<header class="pickup-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1112706" rel="bookmark">日本発 “世界最強グローバルEC”を率いる起業家・原田真帆人の挑戦<span class="icon-paywall-area" data-paywall-id="1112706"></span></a></div>								<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112706" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article>
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1112729" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/25163847/20200825_neat_OG.jpg?w=750" >
+
+
+</a>
+</div>
+						<header class="pickup-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1112729" rel="bookmark">パンツ専業「ニート」が直営店　100種以上の生地を選べるオーダーメード感覚のサロン<span class="icon-paywall-area" data-paywall-id="1112729"></span></a></div>								<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112729" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article>
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1112577" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/25122603/200825_LV_OG.jpg?w=750" >
+
+
+</a>
+</div>
+						<header class="pickup-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1112577" rel="bookmark">「ルイ・ヴィトン」上海旗艦店、8月の売り上げは23億円か？<span class="icon-paywall-area" data-paywall-id="1112577"></span></a></div>								<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112577" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article>
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1112423" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/24180938/v3cjrnfojr3o.jpg?w=750" >
+
+
+</a>
+</div>
+						<header class="pickup-header">
+							<div class="entry-title"><a href="https://www.wwdjapan.com/articles/1112423" rel="bookmark">“ニューノーマル”時代の売れ筋を探せ！　薄色レンズのサングラスとイヤカフがマスクとのコーデで浮上<span class="icon-paywall-area" data-paywall-id="1112423"></span></a></div>								<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112423" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+</div>
+</div>
+																<nav id="khm-15">
+<ul>
+<li class="home"><span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to トップ." href="https://www.wwdjapan.com" class="home" ><span property="name">トップ</span></a><meta property="position" content="1"></span></li>
+<li class=""><span property="itemListElement" typeof="ListItem"><span property="name" class="">フォーカス</span><meta property="url" content="https://www.wwdjapan.com/category/focus"><meta property="position" content="2"></span></li>
+<li class="post post-post current-item"><span property="itemListElement" typeof="ListItem"><span property="name" class="post post-post current-item">怒濤の6月を振り返って　エディターズレター（2020年7月2日配信分）</span><meta property="url" content="https://www.wwdjapan.com/articles/1109664"><meta property="position" content="3"></span></li>
+</ul>
+</nav>
+					
+
+				<section id="primary" class="content-area">
+																					<header class="single-header">
+<div class="single-header__category">フォーカス</div>
+
+	<nav class="navigation post-navigation" role="navigation" aria-label="投稿">
+		<div class="screen-reader-text">投稿ナビゲーション</div>
+		<div class="nav-links"><div class="nav-previous"><a href="https://www.wwdjapan.com/articles/1112263" rel="prev"></a></div><div class="nav-next"><a href="https://www.wwdjapan.com/articles/1112706" rel="next"></a></div></div>
+	</nav></header>
+					<main id="main" class="site-main">
+																											<article id="post-1109664" class="wwdj-post-single wwdj-post-single-focus has-post-thumbnail">
+						<header class="entry-header">
+                                                                                            <h1 class="entry-title entry-title--media-logo">怒濤の6月を振り返って　エディターズレター（2020年7月2日配信分）</h1>                                                        							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/editors-letter" rel="tag">Editor's Letter</a><a href="https://www.wwdjapan.com/topic_tag/views-on-wwd-u-s" rel="tag">VIEWS ON WWD U.S.</a>
+
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-26T09:00:01+09:00">7時間前</time></p>
+																<p class="wwdj-entry-social">
+<span class="wwdj-button wwdj-button-icon wwdj-button-icon__facebook" data-social="facebook"></span>
+<span class="wwdj-button wwdj-button-icon wwdj-button-icon__twitter" data-social="twitter"></span>
+</p>
+								<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1109664" data-login="false" aria-selected="false"></button>
+</p>
+							</div>
+							<div class="entry-author-meta">
+<p class="wwdj-author">
+<a href="https://www.wwdjapan.com/author/chiharuodashima">小田島 千春</a>
+</p>
+
+</div>
+						</header><!-- .entry-header -->
+						<section class="entry-content">
+
+                                                            <p><img class="aligncenter size-large wp-image-959304" src="https://media.wwdjapan.com/wp-content/uploads/2019/10/11134145/view_on_us.png" alt="" width="700" srcset="https://media.wwdjapan.com/wp-content/uploads/2019/10/11134145/view_on_us.png 1200w, https://media.wwdjapan.com/wp-content/uploads/2019/10/11134145/view_on_us-300x100.png 300w, https://media.wwdjapan.com/wp-content/uploads/2019/10/11134145/view_on_us-768x256.png 768w, https://media.wwdjapan.com/wp-content/uploads/2019/10/11134145/view_on_us-1024x341.png 1024w" sizes="(max-width: 1200px) 100vw, 1200px" /></p>
+<div class="clearfix"></div>
+<p><small>※この記事は2020年7月2日に配信した、メールマガジン「エディターズレター（Editors' Letter）」のバックナンバーです。最新のレターを受け取るには<a href="https://www.wwdjapan.com/s/824101" style="text-decoration: underline;" target="_blank" rel="noopener noreferrer">こちらから</a>。</small></p>
+<div class="clearfix"></div>
+<h2>怒濤の6月を振り返って</h2>
+<p>　現地で起こっていることを伝えたい！と、6月はアメリカのBLM運動についての記事を重点的にピックアップしてお届けしました。</p>
+<p>　BLM運動は、アメリカでは新型コロナによる生活の変化や経済的ダメージに勝るとも劣らぬ勢いで、価値観の見直しを迫るムーブメントになっています。</p>
+<p>　そして今、多くの企業やブランドが「黒人の命は大切」というメッセージへの賛同に終わらず、「どうすれば、本心から差別に向き合っていると信じてもらえるか」に腐心しています。</p>
+<p>　そんな企業やブランドに対して、米「WWD」と同じグループ傘下のメディア「ソーシングジャーナル」の黒人女性エディターは「行動あるのみ」と一喝。そして「意思決定の場に多様性を」と提言しています（最初のリンク参照）。</p>
+<p>　こうした声はいろんな会社の内外から噴出しており、エスティ ローダーは社内メモで今後黒人の従業員の雇用率を上げると約束し、アディダスもアメリカ国内のすべてのポジションの30％を黒人とラテン系の人材にすることを目標に掲げました。決定権のあるポジションを白人が占め続ける限り、真のダイバーシティーにはなり得ません。それを推進するのは決定権のある白人でないとできないーーまさにそれに向き合うべき時が来ているのだと思います。</p>
+<p>　元従業員による人種差別の告発が問題視され、サステナブルなファッションをうたうリフォメーションの創業者兼最高経営責任者（CEO）が退任に追い込まれるなど、トップの交代にもつながっています。透明性が売りのエバーレーンでも人種差別問題が持ち上がっているなど、スタートアップもこの問題の渦中にあります。</p>
+<p>　そんな中、私が注目しているのがパタゴニアです。6月に女性CEOが突然退任して、後任が決まっていません。長年成長を支えてきた最高執行責任者が暫定的に指揮を取っているのですが、企業哲学も理解していて後任にふさわしいはずであるにもかかわらず、後任としては指名されていません。</p>
+<p>　米「WWD」は、「退任と直接的な関連性はないものの」としながらも、元パタゴニアのスタッフなどが多様性の欠如を指摘していることを伝えています（2番目のリンク参照）。環境保護とビジネスを両立させるこの唯一無二の企業が、次のトップとするのはどんな人物なのか。なんらかの意志が見える人事になるだろうと注目しています。</p>
+<p>　さて、6月は「プライド月間」でもありました。今年はBLM運動と融合して、より問題意識が強まった感があります。「プライド月間」の締めくくりにふさわしいインタビューをお届けしております。ハニー・ディジョンを知っていますか？（3番目のリンク参照）</p>
+<p>　盛りだくさんで怒濤のような6月でしたが、7月も海外からのさまざまなニュースや声を、チーム一丸となってお伝えしていきたいと思います。</p>
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+<p><img class="alignleft size-thumbnail wp-image-959307" src="media.wwdjapan.com/wp-content/uploads/2019/10/11134316/WWDmail_thumbnail_US.png" alt="" width="150" height="150" srcset="https://media.wwdjapan.com/wp-content/uploads/2019/10/11134316/WWDmail_thumbnail_US.png 2000w, https://media.wwdjapan.com/wp-content/uploads/2019/10/11134316/WWDmail_thumbnail_US-150x150.png 150w, https://media.wwdjapan.com/wp-content/uploads/2019/10/11134316/WWDmail_thumbnail_US-300x300.png 300w, https://media.wwdjapan.com/wp-content/uploads/2019/10/11134316/WWDmail_thumbnail_US-768x768.png 768w, https://media.wwdjapan.com/wp-content/uploads/2019/10/11134316/WWDmail_thumbnail_US-1024x1024.png 1024w" sizes="(max-width: 150px) 100vw, 150px" />VIEWS ON WWD U.S.：米「WWD」の翻訳記事から、注目すべきニュースの紹介や記事の面白さを解説するメールマガジン。「WWDジャパン」のライセンス元である米「WWD」は1910年から続くファッション業界専門紙。世界中のデザイナーや企業のトップと強く繋がっており、彼らの動向や考え、市場の動きをいち早く、詳しく業界で働く人々に届けています。<br />
+<center></p>
+<div style="margin-top:30px; font-size:0.9rem; text-align:center; text-decoration:none; background:#d31b20; width:280px; padding:5px 0px;border-bottom:none;"><a style="background: #d31b20; color: white; padding: 5px 0; text-decoration: none; display: block;" href="https://www.wwdjapan.com/s/824101" target="_blank" rel="noopener noreferrer">最新のレターを受け取る</a></div>
+<p></center></p>
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+<p><strong>エディターズレターとは？</strong><br />
+「WWDジャパン」と「WWDビューティ」の編集者から、パーソナルなメッセージをあなたのメールボックスにダイレクトにお届けするメールマガジン。ファッションやビューティのみならず、テクノロジーやビジネス、グローバル、ダイバーシティなど、みなさまの興味に合わせて、現在7種類のテーマをお選び頂けます。届いたメールには直接返信をすることもできます。</p>
+                                                            
+													</section><!-- .entry-content -->
+						<footer class="entry-footer">
+																						                                                            <aside class="wwdj-entry-author-data">
+<div>
+<header class="wwdj-entry-author-header">
+<p class="avatar"><img src="https://media.wwdjapan.com/wp-content/uploads/2019/09/19111356/Odashima-150x150.jpg" width="80" height="80" alt="小田島 千春" class="avatar avatar-80 wp-user-avatar wp-user-avatar-80 alignnone photo" /></p>
+<div class="wwdj-entry-author-meta">
+<p class="writer-name">小田島 千春</p>
+<p class="job-title">「WWDジャパン」副編集長</p>
+<p class="wwdj-follow">
+<button class="wwdj-button wwdj-button-follow" data-follow-taxonomy="" data-follow-id="" data-login="false" aria-selected="false">フォローする</button>
+</p>
+</div>
+<p class="profile-button">
+<button class="wwdj-button wwdj-button-profile" aria-selected="false">PROFILE</button>
+</p>
+</header>
+<div class="wwdj-entry-author-profile wwdj-entry-author-profile-short" aria-hidden="false">
+<p>1975年3月20日生まれ。B型。上智大学外国語学部卒業後、紳士服会社を経て1999年にINFASパブリケーションズに入社。「WWDジャパン」編集部で翻訳のほか、バッグ、セレクトショップ、ラグジュアリーブランド全般、ジュエリー&ウオッチなどの分野を担当し、2006〜11年に副編集長。WWD Japan.com編集部を経て、18年4月から現職。米国版の翻訳監修を担当。2女児の母</p>
+
+</div>
+<div class="wwdj-entry-author-profile wwdj-entry-author-profile-long" aria-hidden="true">
+<p>1975年3月20日生まれ。B型。上智大学外国語学部卒業後、紳士服会社を経て1999年にINFASパブリケーションズに入社。「WWDジャパン」編集部で翻訳のほか、バッグ、セレクトショップ、ラグジュアリーブランド全般、ジュエリー&ウオッチなどの分野を担当し、2006〜11年に副編集長。「WWD Japan.com」編集部を経て、18年4月から現職。米国版の翻訳監修を担当。2女児の母。最強ラグジュアリー「ルイ・ヴィトン」「シャネル」「エルメス」がどう普遍性と時代性を体現して世界の人々の心を掴むか、無敵SPAインディテックスがどうビジネスモデルをアップデートし増収増益を続けるかに強い興味。趣味は着物で、出産前に習っていた織りや染めをいつか再開したい。得意料理は秋刀魚の土鍋ご飯、パエリヤ、グラタン。オープンエアで明るいうちから飲むのをこよなく愛する。3歳と5歳にしてスルメとチーズとレバーペーストとマグロ（刺身）が好きな娘たちと将来一緒に飲みに行くのが楽しみ「『WWDジャパン』をファッション業界で働く皆さんにとって“頼れる存在”にしたいです」</p>
+
+</div>
+<div class="wwdj-entry-read-writer">
+<a href="https://www.wwdjapan.com/author/chiharuodashima" class="wwdj-button wwdj-button-read__writer" rel="bookmark">この記者の記事一覧</a>
+</div>
+</div>
+</aside>
+                            															<div class="wwdj-related-articles">
+<h2>関連記事</h2>
+					<article class="wwdj-post wwdj-related-articles has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1090923" rel="bookmark">“新たな世界”で企業が進むべき方向は？　黒人女性エディターの公開書簡<span class="icon-paywall-area" data-paywall-id="1090923"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e7%a4%be%e4%bc%9a%e6%83%85%e5%8b%a2" rel="tag">社会情勢</a>
+
+</p>
+                                <p class="wwdj-author">
+<a href="https://www.wwdjapan.com/author/tara-donaldson">TARA DONALDSON</a>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-06-26T14:00:36+09:00">2020/06/26</time></p>
+															</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1090923" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1090923" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/06/25142449/200625_Editor_OG.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-related-articles has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1089512" rel="bookmark">パタゴニアの次期CEOは誰？　“責任ある企業”のトップに今求められるもの<span class="icon-paywall-area" data-paywall-id="1089512"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e4%ba%ba%e4%ba%8b" rel="tag">人事</a><a href="https://www.wwdjapan.com/topic_tag/colmn" rel="tag">コラム</a>
+
+</p>
+                                <p class="wwdj-author">
+<a href="https://www.wwdjapan.com/author/kaley-roshitsh">KALEY ROSHITSH</a>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-06-19T20:00:49+09:00">2020/06/19</time></p>
+															</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1089512" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1089512" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/06/19161734/200619_pata_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-related-articles has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1091924" rel="bookmark">人気DJのハニー・ディジョン、BLMとトランスジェンダーについて語る　「人種差別を解体するのは白人がやるべきこと」<span class="icon-paywall-area" data-paywall-id="1091924"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%93%e3%83%a5%e3%83%bc" rel="tag">インタビュー</a><a href="https://www.wwdjapan.com/topic_tag/%e7%a4%be%e4%bc%9a%e6%83%85%e5%8b%a2" rel="tag">社会情勢</a>
+
+</p>
+                                <p class="wwdj-author">
+<a href="https://www.wwdjapan.com/author/cathrin-schaer">CATHRIN SCHAER</a>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-06-30T22:00:27+09:00">2020/06/30</time></p>
+															</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1091924" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1091924" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/06/30124825/200630_Honey_OG.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-related-articles has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1086744" rel="bookmark">ビューティ業界が黒人差別に対して立ち上がるも課題は山積み　大手企業の人種構成を公表<span class="icon-paywall-area" data-paywall-id="1086744"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e7%a4%be%e4%bc%9a%e6%83%85%e5%8b%a2" rel="tag">社会情勢</a><a href="https://www.wwdjapan.com/topic_tag/%e4%bc%81%e6%a5%ad%e5%8b%95%e5%90%91" rel="tag">企業動向</a><a href="https://www.wwdjapan.com/topic_tag/colmn" rel="tag">コラム</a>
+
+</p>
+                                <p class="wwdj-author">
+<a href="https://www.wwdjapan.com/author/erikitasaka">北坂 映梨</a>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-06-11T17:00:34+09:00">2020/06/11</time></p>
+															</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1086744" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1086744" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/06/11155500/200611_beautyblm_OG.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-related-articles has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1087002" rel="bookmark">アディダスが黒人コミュニティーに20億円超を拠出　従業員の反発を受けて<span class="icon-paywall-area" data-paywall-id="1087002"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e7%a4%be%e4%bc%9a%e6%83%85%e5%8b%a2" rel="tag">社会情勢</a><a href="https://www.wwdjapan.com/topic_tag/%e4%bc%81%e6%a5%ad%e5%8b%95%e5%90%91" rel="tag">企業動向</a>
+
+</p>
+                                <p class="wwdj-author">
+<a href="https://www.wwdjapan.com/author/rosemaryfeitelberg">ROSEMARY FEITELBERG</a>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-06-12T15:00:54+09:00">2020/06/12</time></p>
+															</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1087002" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1087002" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/06/12121615/200612_adi_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-related-articles has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1090254" rel="bookmark">スーツとネクタイ姿で抗議デモ　仕掛けた3人の黒人業界人がその理由を語る<span class="icon-paywall-area" data-paywall-id="1090254"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%93%e3%83%a5%e3%83%bc" rel="tag">インタビュー</a><a href="https://www.wwdjapan.com/topic_tag/%e7%a4%be%e4%bc%9a%e6%83%85%e5%8b%a2" rel="tag">社会情勢</a>
+
+</p>
+                                <p class="wwdj-author">
+<a href="https://www.wwdjapan.com/author/thomas-waller">THOMAS WALLER</a>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-06-23T14:00:05+09:00">2020/06/23</time></p>
+															</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1090254" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1090254" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/06/23113225/200623_Harlem_OG.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+</div>
+																						<p class="wwdj-entry-social">
+<span class="wwdj-button wwdj-button-icon wwdj-button-icon__facebook" data-social="facebook"></span>
+<span class="wwdj-button wwdj-button-icon wwdj-button-icon__twitter" data-social="twitter"></span>
+</p>
+																						<div class="wwdj-entry-tags-content">
+<div class="wwdj-entry-tags wwdj-entry-theme_tag-tags">
+<span class="wwdj-entry-tags-label">THEME</span>
+<p>
+<a href="https://www.wwdjapan.com/theme_tag/business" rel="tag">#ビジネス</a>
+</p>
+</div>
+
+<div class="wwdj-entry-tags wwdj-entry-topic_tag-tags">
+<span class="wwdj-entry-tags-label">TOPIC</span>
+<p>
+<a href="https://www.wwdjapan.com/topic_tag/editors-letter" rel="tag">#Editor's Letter</a><a href="https://www.wwdjapan.com/topic_tag/views-on-wwd-u-s" rel="tag">#VIEWS ON WWD U.S.</a>
+</p>
+</div>
+
+
+
+
+
+
+
+
+</div>
+																				</footer>
+					</article><!-- #post-## -->
+																						
+	<nav class="navigation post-navigation" role="navigation" aria-label="投稿">
+		<div class="screen-reader-text">投稿ナビゲーション</div>
+		<div class="nav-links"><div class="nav-previous"><a href="https://www.wwdjapan.com/articles/1112263" rel="prev">ジャニーズが「美容クリニック行くんです」って言っちゃうんです　エディターズレター（2020年7月6日配信分）</a></div><div class="nav-next"><a href="https://www.wwdjapan.com/articles/1112706" rel="next">日本発 “世界最強グローバルEC”を率いる起業家・原田真帆人の挑戦</a></div></div>
+	</nav>																		</main><!-- .site-main -->
+
+                                            <div class="latest-issue-block">
+    <div class="latest-issue-block__inner">
+        <div class="latest-issue-block__header">
+            <h2 class="">最新号紹介</h2>
+        </div>
+        <div class="latest-issue-block__body">
+            <div class="wwdj-subscribe-content-box">
+                <div class="wwdj-japan-content">
+  <article class="wwdj-post wwdj-subscribe-content has-post-thumbnail">
+    <header class="entry-header">
+<p class="wwdj-product-type-label">
+WWD JAPAN
+</p>
+        <h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1111807" rel="bookmark" >持続可能な企業になるために必要なこと</a></h2>
+        <div class="entry-meta">
+<p class="subscribe-date">
+<span>WWD JAPAN</span>
+<span>2020/08/24発売</span>
+<span>Vol.2150</span>
+</p>
+        </div>        <a href="https://www.wwdjapan.com/articles/1111807" class="wwdj-button wwdj-button-read__latest_issue">詳細/購入はこちら</a>
+    </header><!-- .entry-header --><div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1111807" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/21143510/WWD0824-1.jpg?w=750" >
+
+
+</a>
+</div>
+  </article><!-- #post-## --></div>                <div class="wwdj-beauty-content">
+<article class="wwdj-post wwdj-subscribe-content has-post-thumbnail">
+    <header class="entry-header">
+<p class="wwdj-product-type-label">
+WWD BEAUTY
+</p>
+        <h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1113048" rel="bookmark" >営業再開後6〜7月の商況を調査　百貨店の“新しい日常”に迫る</a></h2>
+        <div class="entry-meta">
+<p class="subscribe-date">
+<span>WWD BEAUTY</span>
+<span>2020/08/27発売</span>
+<span>Vol.610</span>
+</p>
+        </div>        <a href="https://www.wwdjapan.com/articles/1113048" class="wwdj-button wwdj-button-read__latest_issue">詳細/購入はこちら</a>
+    </header><!-- .entry-header --><div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1113048" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/25183334/2020_0827-1.jpg?w=750" >
+
+
+</a>
+</div>
+</article><!-- #post-## --></div>            </div>
+        </div>
+    </div>
+</div>
+                    					                        <div class="OUTBRAIN" data-src="https://www.wwdjapan.com/articles/1109664" data-widget-id="AR_1"></div>
+																																<div class="wwdj-banner wwdj-banner-top">
+</div>
+										<div id="sub" class="site-sub">
+													<div class="wwdj-category-posts wwdj-category-posts__news">
+<h2 class="section-title"><span>ニュース</span></h2>
+					<article class="wwdj-post wwdj-post-off contents-type-04 has-post-thumbnail" aria-hidden="false">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1113151" rel="bookmark">「ランバン オン ブルー」のアンバサダーに北村匠海が就任　9月から全国でキャンペーン展開<span class="icon-paywall-area" data-paywall-id="1113151"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%b3%e3%83%9e%e3%83%bc%e3%82%b7%e3%83%a3%e3%83%ab" rel="tag">コマーシャル</a>
+
+</p>
+								<p class="wwdj-author">
+<a href="https://www.wwdjapan.com/author/katsuhikoaikawa">相川克彦</a>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-26T16:00:41+09:00">45分前</time></p>
+								<p class="wwdj-brand-tags">
+<a href="https://www.wwdjapan.com/brand_tag/lanvin-en-bleu" rel="tag">#LANVIN EN BLEU</a>
+</p>
+															</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1113151" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1113151" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/26142340/200826_lanvin_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-off contents-type-04 has-post-thumbnail" aria-hidden="false">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1113035" rel="bookmark">「ユニクロ」が雑誌「LifeWearマガジン」第3号を8月28日から配布　全世界で137万部を配布予定<span class="icon-paywall-area" data-paywall-id="1113035"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e6%96%b0%e4%bd%9c" rel="tag">新作</a><a href="https://www.wwdjapan.com/topic_tag/%e9%9b%91%e8%aa%8c%e3%83%bb%e6%9b%b8%e7%b1%8d%e3%83%bb%e5%aa%92%e4%bd%93" rel="tag">雑誌・書籍・媒体</a>
+
+</p>
+								<p class="wwdj-author">
+<a href="https://www.wwdjapan.com/author/hanami-isogimi">五十君 花実</a>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-26T14:00:42+09:00">2時間前</time></p>
+								<p class="wwdj-brand-tags">
+<a href="https://www.wwdjapan.com/brand_tag/uniqlo" rel="tag">#UNIQLO</a>
+</p>
+															</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1113035" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1113035" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/25183959/200825_UQ_eye.jpg?w=200" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-off contents-type-04 has-post-thumbnail" aria-hidden="false">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1113118" rel="bookmark">ユニクロがデザイナー、ジル・サンダーとの協業ライン「+J」を今秋復活<span class="icon-paywall-area" data-paywall-id="1113118"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%83%96%e3%83%a9%e3%83%b3%e3%83%89%e5%be%a9%e6%b4%bb" rel="tag">ブランド復活</a>
+
+</p>
+								<p class="wwdj-author">
+<a href="https://www.wwdjapan.com/author/hanami-isogimi">五十君 花実</a>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-26T12:55:43+09:00">3時間前</time></p>
+								<p class="wwdj-brand-tags">
+<a href="https://www.wwdjapan.com/brand_tag/uniqlo" rel="tag">#UNIQLO</a><a href="https://www.wwdjapan.com/brand_tag/%ef%bc%8bj" rel="tag">#＋J</a>
+</p>
+															</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1113118" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1113118" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/26140902/200826_uniqlo_eye.jpg?w=200" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+<div class="wwdj-read-articles">
+<a href="https://www.wwdjapan.com/category/news" class="wwdj-button wwdj-button-read__articles" rel="bookmark">ニュース記事一覧</a>
+</div>
+</div>
+																			<div class="wwdj-category-posts wwdj-category-posts__collection">
+<h2 class="section-title"><span>コレクション</span></h2>
+					<article class="wwdj-post wwdj-post-off contents-type-04 has-post-thumbnail" aria-hidden="false">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1112587" rel="bookmark">「ウィザード」2020-21年秋冬コレクション<span class="icon-paywall-area" data-paywall-id="1112587"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/category/collection" rel="tag">COLLECTION</a>
+
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-25T14:00:48+09:00">2020/08/25</time></p>
+								<p class="wwdj-brand-tags">
+<a href="https://www.wwdjapan.com/brand_tag/wizzard" rel="tag">#WIZZARD</a>
+</p>
+															</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112587" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1112587" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/25132455/WIZZARD-2020-21-FW-COLLECTION-OG.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-off contents-type-04 has-post-thumbnail" aria-hidden="false">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1112408" rel="bookmark">「C.P. カンパニー」2020-21年秋冬コレクション<span class="icon-paywall-area" data-paywall-id="1112408"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/category/collection" rel="tag">COLLECTION</a>
+
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-24T22:00:08+09:00">2020/08/24</time></p>
+								<p class="wwdj-brand-tags">
+<a href="https://www.wwdjapan.com/brand_tag/cp-company" rel="tag">#C.P. COMPANY</a>
+</p>
+															</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112408" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1112408" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/24174910/C.P.COMPANY-2020-21-FW-COLLECTION-EYE.jpg?w=200" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-off contents-type-04 has-post-thumbnail" aria-hidden="false">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1111257" rel="bookmark">「チノ」2021年春夏メンズ・コレクション<span class="icon-paywall-area" data-paywall-id="1111257"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/category/collection" rel="tag">COLLECTION</a>
+
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-23T18:00:33+09:00">2020/08/23</time></p>
+								<p class="wwdj-brand-tags">
+<a href="https://www.wwdjapan.com/brand_tag/cinoh" rel="tag">#CINOH</a>
+</p>
+															</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1111257" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1111257" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/20152309/eye-21.jpg?w=200" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+<div class="wwdj-read-articles">
+<a href="https://www.wwdjapan.com/category/collection" class="wwdj-button wwdj-button-read__articles" rel="bookmark">コレクション記事一覧</a>
+</div>
+</div>
+																			<div class="wwdj-category-posts wwdj-category-posts__focus">
+<h2 class="section-title"><span>フォーカス</span></h2>
+					<article class="wwdj-post wwdj-post-off contents-type-04 has-post-thumbnail" aria-hidden="false">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1112706" rel="bookmark">日本発 “世界最強グローバルEC”を率いる起業家・原田真帆人の挑戦<span class="icon-paywall-area" data-paywall-id="1112706"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%93%e3%83%a5%e3%83%bc" rel="tag">インタビュー</a><a href="https://www.wwdjapan.com/topic_tag/ec" rel="tag">EC</a><a href="https://www.wwdjapan.com/topic_tag/%e4%bc%81%e6%a5%ad%e5%8b%95%e5%90%91" rel="tag">企業動向</a>
+
+</p>
+								<p class="wwdj-author">
+<a href="https://www.wwdjapan.com/author/yasuakiyokoyama">横山 泰明</a>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-26T12:00:44+09:00">4時間前</time></p>
+																							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112706" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1112706" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/26084048/200825_harada_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-off contents-type-04 has-post-thumbnail" aria-hidden="false">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1109664" rel="bookmark">怒濤の6月を振り返って　エディターズレター（2020年7月2日配信分）<span class="icon-paywall-area" data-paywall-id="1109664"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/editors-letter" rel="tag">Editor's Letter</a><a href="https://www.wwdjapan.com/topic_tag/views-on-wwd-u-s" rel="tag">VIEWS ON WWD U.S.</a>
+
+</p>
+								<p class="wwdj-author">
+<a href="https://www.wwdjapan.com/author/chiharuodashima">小田島 千春</a>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-26T09:00:01+09:00">7時間前</time></p>
+																							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1109664" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1109664" data-bg="https://media.wwdjapan.com/wp-content/uploads/2022/08/14145708/200814_us_eye.jpg?w=200" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-off contents-type-04 has-post-thumbnail" aria-hidden="false">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1112263" rel="bookmark">ジャニーズが「美容クリニック行くんです」って言っちゃうんです　エディターズレター（2020年7月6日配信分）<span class="icon-paywall-area" data-paywall-id="1112263"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/editors-letter" rel="tag">Editor's Letter</a><a href="https://www.wwdjapan.com/topic_tag/her-opinion" rel="tag">HER OPINION</a>
+
+</p>
+								<p class="wwdj-author">
+<a href="https://www.wwdjapan.com/author/akikofukuzaki">福崎 明子</a>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-25T20:00:30+09:00">20時間前</time></p>
+																							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112263" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1112263" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/06/17145118/thumnail-3.jpg?w=200" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+<div class="wwdj-read-articles">
+<a href="https://www.wwdjapan.com/category/focus" class="wwdj-button wwdj-button-read__articles" rel="bookmark">フォーカス記事一覧</a>
+</div>
+</div>
+																			<div class="wwdj-category-posts wwdj-category-posts__snap">
+<h2 class="section-title"><span>スナップ</span></h2>
+					<article class="wwdj-post wwdj-post-off contents-type-04 has-post-thumbnail" aria-hidden="false">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1111695" rel="bookmark">コロナ禍で世界中のファッショニスタにも自転車ブーム　NYからベルリンまで、真夏のサイクリングスタイル今昔スナップ<span class="icon-paywall-area" data-paywall-id="1111695"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/streetsnap" rel="tag">ストリートスナップ</a>
+
+</p>
+								<p class="wwdj-author">
+<a href="https://www.wwdjapan.com/author/wwdstaff">WWD STAFF</a>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-23T20:00:34+09:00">2020/08/23</time></p>
+																							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1111695" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1111695" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/21143515/200821_cycle_og.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-off contents-type-04 has-post-thumbnail" aria-hidden="false">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1109652" rel="bookmark">ウィズコロナ初のリアルでのファッション・ウイーク来場者は何着てる？　コペンハーゲンではマスクよりもビーサンが人気<span class="icon-paywall-area" data-paywall-id="1109652"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%83%88%e3%83%ac%e3%83%b3%e3%83%89" rel="tag">トレンド</a><a href="https://www.wwdjapan.com/topic_tag/fashionweeksnap" rel="tag">ファッション・ウイーク・スナップ</a>
+
+</p>
+								<p class="wwdj-author">
+<a href="https://www.wwdjapan.com/author/inoueelie">ライターELIE INOUE</a>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-16T20:00:46+09:00">2020/08/16</time></p>
+																							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1109652" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1109652" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/14154755/200814_CPHFW_EYE-1.jpg?w=200" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-off contents-type-04 has-post-thumbnail" aria-hidden="false">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1090641" rel="bookmark">レインボーカラーで彩られる「プライド パレード」　20年はBLM運動と融合<span class="icon-paywall-area" data-paywall-id="1090641"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/eventsnap" rel="tag">イベントスナップ</a><a href="https://www.wwdjapan.com/topic_tag/lgbtq" rel="tag">LGBTQ</a>
+
+</p>
+								<p class="wwdj-author">
+<a href="https://www.wwdjapan.com/author/wwdstaff">WWD STAFF</a>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-06-24T22:00:03+09:00">2020/06/24</time></p>
+																							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1090641" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1090641" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/06/24155525/200624_ablm_eye.jpg?w=200" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+<div class="wwdj-read-articles">
+<a href="https://www.wwdjapan.com/category/snap" class="wwdj-button wwdj-button-read__articles" rel="bookmark">スナップ記事一覧</a>
+</div>
+</div>
+											</div><!-- .site-sub -->
+				</section><!-- .content-area -->
+				
+							<div id="secondary" class="secondary">
+																								<div id="widget-area" class="widget-area" role="complementary">
+								<section id="wwd-ad-manager-feature-fee-2" class="wwdj-widget wwd-ad-manager-widget-feature-feed"><div class="wwdja-pc-feature-1" id="wwdja-677018294"><script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script> var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];</script>
+<div id="gpt-ad-4960977637667-0">
+  <script>
+    googletag.cmd.push(function() {
+      googletag.defineSlot( '/21929796191/PC/FEATUREバナー', [332,223], 'gpt-ad-4960977637667-0' )
+        .addService(googletag.pubads()).setCollapseEmptyDiv(true,true);
+		googletag.enableServices();
+		googletag.display( 'gpt-ad-4960977637667-0' );
+    });
+  </script>
+</div>
+</div></section><section id="wwdj-registration-2" class="wwdj-widget wwdj-widget-registration"></section><section id="wwdj-ranking-2" class="wwdj-widget wwdj-widget-ranking"><h2 class="widget-title"><span>フォーカスランキング</span></h2><nav>
+<button type="button" class="wwdj-button wwdj-button-tab-ranking" aria-selected="true" disabled>デイリー</button>
+<button type="button" class="wwdj-button wwdj-button-tab-ranking" aria-selected="false">週間</button>
+<button type="button" class="wwdj-button wwdj-button-tab-ranking" aria-selected="false">月間</button>
+</nav>
+<div aria-hidden="false">
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1112706" rel="bookmark">日本発 “世界最強グローバルEC”を率いる起業家・原田真帆人の挑戦<span class="icon-paywall-area" data-paywall-id="1112706"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%93%e3%83%a5%e3%83%bc" rel="tag">インタビュー</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-26T12:00:44+09:00">4時間前</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112706" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1106390" rel="bookmark">「マスク荒れ」増加!　女性のリアルな声と正しいスキンケア法を伝授<span class="icon-paywall-area" data-paywall-id="1106390"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e5%a3%b2%e3%82%8c%e7%ad%8b" rel="tag">売れ筋</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-04T19:00:41+09:00">2020/08/04</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1106390" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1108755" rel="bookmark">「ニューバランス」の新たな歴史を刻む“327”　ヒットの理由を解く3つの鍵<span class="icon-paywall-area" data-paywall-id="1108755"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e6%96%b0%e4%bd%9c" rel="tag">新作</a>
+
+</p>
+								<p class="wwdj-pr-tag">
+<span>PR</span>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-18T15:00:32+09:00">2020/08/18</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1108755" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1112423" rel="bookmark">“ニューノーマル”時代の売れ筋を探せ！　薄色レンズのサングラスとイヤカフがマスクとのコーデで浮上<span class="icon-paywall-area" data-paywall-id="1112423"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%83%88%e3%83%ac%e3%83%b3%e3%83%89" rel="tag">トレンド</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-25T09:00:19+09:00">2020/08/25</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1112423" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1104496" rel="bookmark">ファストリ上席執行役員が独立してタダで始めた「トーチング」　正気で商機を感じているの!?<span class="icon-paywall-area" data-paywall-id="1104496"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/colmn" rel="tag">コラム</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-07-29T19:00:25+09:00">2020/07/29</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1104496" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+</div>
+<div aria-hidden="true">
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1108755" rel="bookmark">「ニューバランス」の新たな歴史を刻む“327”　ヒットの理由を解く3つの鍵<span class="icon-paywall-area" data-paywall-id="1108755"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e6%96%b0%e4%bd%9c" rel="tag">新作</a>
+
+</p>
+								<p class="wwdj-pr-tag">
+<span>PR</span>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-18T15:00:32+09:00">2020/08/18</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1108755" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1110821" rel="bookmark">「オゾック」終了が意味するもの<span class="icon-paywall-area" data-paywall-id="1110821"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e9%96%89%e5%ba%97%e3%83%bb%e9%96%89%e9%8e%96" rel="tag">閉店・閉鎖</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-21T09:00:03+09:00">2020/08/21</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1110821" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1100302" rel="bookmark">「国際化粧品展」が西日本で初開催　クリーンビューティやサステナビリティ企業も多数出展<span class="icon-paywall-area" data-paywall-id="1100302"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88" rel="tag">イベント</a>
+
+</p>
+								<p class="wwdj-pr-tag">
+<span>PR</span>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-11T13:00:12+09:00">2020/08/11</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1100302" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1106390" rel="bookmark">「マスク荒れ」増加!　女性のリアルな声と正しいスキンケア法を伝授<span class="icon-paywall-area" data-paywall-id="1106390"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e5%a3%b2%e3%82%8c%e7%ad%8b" rel="tag">売れ筋</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-04T19:00:41+09:00">2020/08/04</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1106390" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/967859" rel="bookmark">2020-21年秋冬トレンド　要注目はコーデュロイと再びチェック<span class="icon-paywall-area" data-paywall-id="967859"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%83%88%e3%83%ac%e3%83%b3%e3%83%89" rel="tag">トレンド</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2019-10-28T15:00:06+09:00">2019/10/28</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="967859" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1110714" rel="bookmark">ロンハーマンの2020-21年秋冬　“無染色”や“自然界の色味”をまとう心地よさ<span class="icon-paywall-area" data-paywall-id="1110714"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%83%88%e3%83%ac%e3%83%b3%e3%83%89" rel="tag">トレンド</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-19T12:00:20+09:00">2020/08/19</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1110714" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1110846" rel="bookmark">インフルエンサー名鑑Vol.2 ファッション愛を語る高島涼にオススメを聞く26の質問<span class="icon-paywall-area" data-paywall-id="1110846"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%93%e3%83%a5%e3%83%bc" rel="tag">インタビュー</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-21T10:00:31+09:00">2020/08/21</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1110846" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1108956" rel="bookmark">渋谷センター街の老舗書店「大盛堂書店」がファッション誌販売にこだわり続けるワケ<span class="icon-paywall-area" data-paywall-id="1108956"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%93%e3%83%a5%e3%83%bc" rel="tag">インタビュー</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-18T12:00:18+09:00">2020/08/18</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1108956" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1111932" rel="bookmark">約2倍成長をキープ　サザビーリーグのD2Cジュエリーが継続成長するワケ<span class="icon-paywall-area" data-paywall-id="1111932"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%93%e3%83%a5%e3%83%bc" rel="tag">インタビュー</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-23T10:00:58+09:00">2020/08/23</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1111932" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1107172" rel="bookmark">「WWDビューティ」と「MERY」が1日限りのオンラインビューティイベントを開催　ゲストに内田理央ら<span class="icon-paywall-area" data-paywall-id="1107172"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e7%a4%be%e5%91%8a" rel="tag">社告</a>
+
+</p>
+								<p class="wwdj-pr-tag">
+<span>PR</span>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-14T13:00:37+09:00">2020/08/14</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1107172" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+</div>
+<div aria-hidden="true">
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1107196" rel="bookmark">センスと体形でブランドを体現するプラスサイズ販売員　プニュズ吉澤綾花<span class="icon-paywall-area" data-paywall-id="1107196"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%93%e3%83%a5%e3%83%bc" rel="tag">インタビュー</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-07T08:00:07+09:00">2020/08/07</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1107196" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1106390" rel="bookmark">「マスク荒れ」増加!　女性のリアルな声と正しいスキンケア法を伝授<span class="icon-paywall-area" data-paywall-id="1106390"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e5%a3%b2%e3%82%8c%e7%ad%8b" rel="tag">売れ筋</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-04T19:00:41+09:00">2020/08/04</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1106390" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1100302" rel="bookmark">「国際化粧品展」が西日本で初開催　クリーンビューティやサステナビリティ企業も多数出展<span class="icon-paywall-area" data-paywall-id="1100302"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88" rel="tag">イベント</a>
+
+</p>
+								<p class="wwdj-pr-tag">
+<span>PR</span>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-11T13:00:12+09:00">2020/08/11</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1100302" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1108755" rel="bookmark">「ニューバランス」の新たな歴史を刻む“327”　ヒットの理由を解く3つの鍵<span class="icon-paywall-area" data-paywall-id="1108755"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e6%96%b0%e4%bd%9c" rel="tag">新作</a>
+
+</p>
+								<p class="wwdj-pr-tag">
+<span>PR</span>
+</p>
+								<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-18T15:00:32+09:00">2020/08/18</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1108755" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/967859" rel="bookmark">2020-21年秋冬トレンド　要注目はコーデュロイと再びチェック<span class="icon-paywall-area" data-paywall-id="967859"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%83%88%e3%83%ac%e3%83%b3%e3%83%89" rel="tag">トレンド</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2019-10-28T15:00:06+09:00">2019/10/28</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="967859" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1093424" rel="bookmark">「キス トウキョウ」オープン直前徹底解剖　写真200枚超で見る店内とほぼ全アイテム<span class="icon-paywall-area" data-paywall-id="1093424"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%aa%e3%83%bc%e3%83%97%e3%83%b3" rel="tag">オープン</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-07-03T18:30:37+09:00">2020/07/03</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1093424" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1106669" rel="bookmark">「セリーヌ」2021年春夏メンズはティックトック上のユースを描写　20代と30代の記者がそれぞれの視点で解説<span class="icon-paywall-area" data-paywall-id="1106669"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%b3%e3%83%ac%e3%82%af%e3%82%b7%e3%83%a7%e3%83%b3%e3%83%bb%e3%83%aa%e3%83%9d%e3%83%bc%e3%83%88" rel="tag">コレクション・リポート</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-08-04T22:30:49+09:00">2020/08/04</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1106669" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1097953" rel="bookmark">暖冬対策で薄手ワンピを充実　「ユニクロ」20-21年秋冬展示会から VOL.2<span class="icon-paywall-area" data-paywall-id="1097953"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/colmn" rel="tag">コラム</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-07-13T20:00:47+09:00">2020/07/13</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1097953" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1103928" rel="bookmark">「エクセル」史上最年少の若さで部長に就任  どんなキャリアでも常に“楽しんでいたい”<span class="icon-paywall-area" data-paywall-id="1103928"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%93%e3%83%a5%e3%83%bc" rel="tag">インタビュー</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-07-28T18:00:13+09:00">2020/07/28</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1103928" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-post-ranking has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1104094" rel="bookmark">不屈の「コム デ ギャルソン・オム プリュス」　2021年春夏のショーで見せた8分間の輝き<span class="icon-paywall-area" data-paywall-id="1104094"></span></a></h2>							<div class="entry-meta">
+								<p class="wwdj-topic-tags">
+<a href="https://www.wwdjapan.com/topic_tag/%e3%82%b3%e3%83%ac%e3%82%af%e3%82%b7%e3%83%a7%e3%83%b3%e3%83%bb%e3%83%aa%e3%83%9d%e3%83%bc%e3%83%88" rel="tag">コレクション・リポート</a>
+
+</p>
+																<p class="entry-date entry-date-published"><time class="published" datetime="2020-07-28T17:30:19+09:00">2020/07/28</time></p>
+							</div>
+							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1104094" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+					</article><!-- #post-## -->
+</div>
+<p class="ranking-read"><a href="https://www.wwdjapan.com/ranking" class="wwdj-button wwdj-button-read__ranking">フォーカスランキング一覧</a></p>
+</section><section id="wwdj-latest-subscribe-2" class="wwdj-widget wwdj-widget-latest-subscribe"><h2 class="widget-title"><span>最新号紹介</span></h2><div class="products" id="latest_subscribe_products">
+</div>
+<p class="products-read"><a href="https://www.wwdjapan.com/subscribe" class="wwdj-button wwdj-button-read__products">バックナンバー一覧</a></p>
+</section><section id="wwdj-pr-stories-2" class="wwdj-widget wwdj-widget-pr-stories"><div class="wwdj-pr-stories">
+<h2 class="wwdj-pr-stories-title">WWD PR <span>STORIES</span></h2>
+<div class="wwdj-pr-stories-wrap">
+					<article class="wwdj-post wwdj-pr-stories has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/s/1046152" rel="bookmark">創業110年を迎えた「サムソナイト」で魅せるスタイルセッション<span class="icon-paywall-area" data-paywall-id="1046152"></span></a></h2>							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1046152" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/s/1046152" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/03/03133755/SN2index_OG_200731.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-pr-stories has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1100302" rel="bookmark">「国際化粧品展」が西日本で初開催　クリーンビューティやサステナビリティ企業も多数出展<span class="icon-paywall-area" data-paywall-id="1100302"></span></a></h2>							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1100302" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1100302" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/07150138/CosmeOsaka2020_OG_200731.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-pr-stories has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1108296" rel="bookmark">生活を豊かにする逸品が集まる「ライフスタイルweek 関西」を9月に初開催　オンライン商談も導入<span class="icon-paywall-area" data-paywall-id="1108296"></span></a></h2>							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1108296" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1108296" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/18133029/og_life_style-1.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-pr-stories has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1101560" rel="bookmark">ビジュアル・マーチャンダイジングがウィズコロナ時代に必要なわけ<span class="icon-paywall-area" data-paywall-id="1101560"></span></a></h2>							<p class="wwdj-bookmark">
+<button class="wwdj-button wwdj-button-icon wwdj-button-icon__bookmark" data-bookmark-id="1101560" data-login="false" aria-selected="false"></button>
+</p>
+						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1101560" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/07/30152023/VMS_OG_200720.jpg?w=750" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+</div>
+<div class="wwdj-read-articles">
+<a href="https://www.wwdjapan.com/promotions/stories" class="wwdj-button wwdj-button-read__articles">WWD PR <span>STORIES一覧</span></a>
+</div>
+</div>
+</section><section id="wwdj-pr-news-2" class="wwdj-widget wwdj-widget-pr-news"><div class="wwdj-pr-news">
+<h2 class="wwdj-pr-news-title">WWD PR <span>NEWS</span></h2>
+<div class="wwdj-pr-news-wrap">
+					<article class="wwdj-post wwdj-pr-news has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1109589" rel="bookmark">ヤギがナノファイバーを使用した高機能マスク発売　薄くて軽量、ウイルスをブロック<span class="icon-paywall-area" data-paywall-id="1109589"></span></a></h2>						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1109589" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/14131928/200814_yagi_eye.jpg?w=200" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-pr-news has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1109596" rel="bookmark">三喜商事が伊「イレブンティ」のメンズを本格的にスタート　直営店オープンを見据えた初のポップアップストア<span class="icon-paywall-area" data-paywall-id="1109596"></span></a></h2>						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1109596" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/21192235/200824_ELEVENTY_EYE_2.jpg?w=200" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-pr-news has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1108936" rel="bookmark">サッカー元女子日本代表の丸山桂里奈が「ロクシタン」の髪まとまる“神”ミルクで15秒チャレンジに挑戦！かんたんにまとまる“さら艶”髪に<span class="icon-paywall-area" data-paywall-id="1108936"></span></a></h2>						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1108936" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/18182215/eye-18.jpg?w=200" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+					<article class="wwdj-post wwdj-pr-news has-post-thumbnail">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="https://www.wwdjapan.com/articles/1103913" rel="bookmark">パルコが2020年秋冬の広告ビジュアルを公開　個性あふれるヒーローを描く<span class="icon-paywall-area" data-paywall-id="1103913"></span></a></h2>						</header><!-- .entry-header -->
+						<div class="thumbnail">
+<a class="bg-image lazyload" href="https://www.wwdjapan.com/articles/1103913" data-bg="https://media.wwdjapan.com/wp-content/uploads/2020/08/03124311/Parco_Banner_2020AW_01_EYE%E3%83%8F%E3%82%99%E3%83%8A%E3%83%BC.jpg?w=200" >
+
+
+</a>
+</div>
+					</article><!-- #post-## -->
+</div>
+<div class="wwdj-read-articles">
+<a href="https://www.wwdjapan.com/promotions/news" class="wwdj-button wwdj-button-read__articles">WWD PR <span>NEWS一覧</span></a>
+</div>
+</div>
+</section><section id="wwdj-mail-magazine-2" class="wwdj-widget wwdj-widget-mail-magazine"><div>
+<h2 class="widget-title"><span>メールマガジン登録</span></h2>	<form name="" action="" method="post">
+	<p class="input">
+	<input type="email" name="email" id="email" value="" autocomplete="default" placeholder="メールアドレス*" />
+	</p>
+	<p class="submit">
+	<button id="register_mailmagazine" type="button" class="wwdj-button wwdj-button-primary wwdj-button-primary__fill">登録</button>
+	</p>
+	</form>
+	<div class="note">
+	<p>毎週月、水、金に注目コンテンツをお知らせするメールマガジンをお届けします。<br />	今ならデジタルデイリーの１週間試し読みもご利用いただけます。<br />	<em>※ @icloud.com/@me.com/@mac.com 以外のアドレスでご登録ください。</em></p>
+	</div>
+		<script type="text/javascript">
+		jQuery(document).ready(function(){
+			var mailmag_endpoint = 'https://d3fhtt7xd1x1sy.cloudfront.net/stable';
+			jQuery('#register_mailmagazine').click( function(){
+				jQuery.ajax({
+                	type : 'post',
+                	url : mailmag_endpoint,
+                	data : JSON.stringify({
+						'email': jQuery('#email').val(),
+						'callback': 'https://www.wwdjapan.com/account/verify-email/registration/-/-/-/-/verify'
+					}),
+                	contentType: 'application/JSON',
+                	dataType : 'JSON',
+                	scriptCharset: 'utf-8',
+                	success : function(data) {
+						if (data.success === true) {
+							location.href = 'https://www.wwdjapan.com/account/verify-email/registration/-/-/-/send';
+						}
+                	},
+                	error : function(data) {
+                    	if (JSON.parse(data.responseText).success === false) {
+							jQuery('p.input').prepend('<span id="email-error" class="invalid-alert">※そのメールアドレスは登録済みです。</span>')
+						}
+                	}
+            	});
+			});
+		});
+	</script>
+</div>
+</section><section id="wwd-ad-manager-text-2" class="wwdj-widget wwd-ad-manager-widget-text"><style>
+            .yads_ad {
+                padding: 12px;
+                border: 1px solid #d0d0d0;
+                line-height: 2rem;
+                font-family: "Roboto", Arial, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+            }
+            .yads_ad_title {
+                font-weight: bold;
+                font-size: 12.8px;
+                line-height: 2rem;
+                font-family: "Roboto", Arial, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+            }
+            .yads_ad_adv {
+                font-size: 10px;
+                font-weight: 500;
+                font-family: "Roboto", Arial, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+            }
+           .yads_ad_desc {
+                font-size: 12.8px;
+                line-height: 2rem;
+                font-family: "Roboto", Arial, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+           }
+            .yads_ad_item,
+            .yads_ad_info a {
+                color: #000;
+                text-decoration: none;
+            }
+            .yads_ad_item:hover,
+            .yads_ad_info a:hover {
+                text-decoration: underline;
+            }
+            .yads_ad_info {
+                font-size: 0.7rem;
+                text-align: right;
+            }
+        </style>
+<script type="text/javascript" language="JavaScript">yads_ad_ds = '19167_160782';</script>
+<script type="text/javascript" language="JavaScript" src="//yads.c.yimg.jp/js/yads.js"></script></section>							</div><!-- .widget-area -->
+															</div><!-- .secondary -->
+						</div><!-- #content -->
+            			<footer id="colophon" class="site-footer" role="contentinfo">
+				<div class="footer-site-content">
+					 <div class="wwdj-magazine-subscription">
+<svg width="244" height="256" xmlns="http://www.w3.org/2000/svg" class="footer-background-svg">
+<path d="M0 0h175.59l68.294 256H0z" fill="#D31B20" fill-rule="evenodd"/>
+</svg>
+<a href="https://www.wwdjapan.com/s/505009">
+<span class="wwdj-magazine-subscription-image lazyloaded"></span>
+<div class="content">
+<div class="subscription-title">ファッションニュースを<br>見逃すな！</div>
+<p class="subscription-logo"></p>
+<button type="button" class="wwdj-button wwdj-button-primary wwdj-button-primary__fill">定期購読</button>
+</div>
+</a>
+</div>
+
+					 <nav id="category-menu-container" class="category-menu-container"><ul id="category-menu" class="category-menu"><li id="menu-item-866695" class="parent-item"><a href="/">トップ</a></li>
+<li id="menu-item-866696" class="parent-item"><a href="https://www.wwdjapan.com/category/news">ニュース</a></li>
+<li id="menu-item-1006165" class="parent-item"><a href="/ranking">ランキング</a></li>
+<li id="menu-item-866697" class="parent-item"><a href="https://www.wwdjapan.com/category/collection">コレクション</a></li>
+<li id="menu-item-866698" class="parent-item"><a href="https://www.wwdjapan.com/category/focus">フォーカス</a></li>
+<li id="menu-item-866699" class="parent-item"><a href="https://www.wwdjapan.com/category/snap">スナップ</a></li>
+<li id="menu-item-866700" class="parent-item"><a href="https://www.wwdjapan.com/category/career">キャリア</a></li>
+<li id="menu-item-1006163" class="parent-item"><a href="/subscribe">紙面紹介</a></li>
+<li id="menu-item-1006164" class="parent-item"><a href="/s/505009">定期購読</a></li>
+</ul></nav>
+					 <nav id="other-menu-container" class="other-menu-container"><ul id="other-menu" class="other-menu"><li id="menu-item-987313" class="parent-item"><a href="https://www.wwdjapan.com/privacy">プライバシーポリシー</a></li>
+<li id="menu-item-987314" class="parent-item"><a href="https://www.wwdjapan.com/law">特定商取引法に基づく表記</a></li>
+<li id="menu-item-987315" class="parent-item"><a href="https://www.wwdjapan.com/browser">推奨環境</a></li>
+<li id="menu-item-987316" class="parent-item"><a href="https://www.wwdjapan.com/copyright">著作権について</a></li>
+<li id="menu-item-866706" class="parent-item"><a href="http://www.infaspub.co.jp/company">会社概要</a></li>
+<li id="menu-item-866707" class="parent-item"><a href="http://www.infaspub.co.jp/contact">お問い合わせ</a></li>
+<li id="menu-item-866708" class="parent-item"><a href="http://www.infaspub.co.jp/recruit">採用情報</a></li>
+<li id="menu-item-866709" class="parent-item"><a href="http://www.infaspub.co.jp/#media-kit-section">媒体資料</a></li>
+</ul></nav>
+				</div><!-- .site-content -->
+				<div class="footer-site-info">
+					 <p class="copyright"><small>Copyright&copy; 2013 INFAS PUBLICATIONS WWD JAPAN All rights reserved.<br>Contains material reprinted by permission from WWD&copy; 2018 FAIRCHILD PUBLISHING, LLC. All rights reserved.</small></p>
+
+					 <div class="wwdj-footer-social">
+<ul>
+<li class="instagram">
+<a href="https://www.instagram.com/wwd_jp/" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+<path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+</svg>
+</a>
+</li>
+<li class="facebook">
+<a href="https://www.facebook.com/WWDJapan" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 512">
+<path d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229"/>
+</svg>
+</a>
+</li>
+<li class="twitter">
+<a href="https://twitter.com/wwd_jp" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 415.84">
+<path d="M459.37 103.64c.33 4.54.33 9.09.33 13.64 0 138.72-105.59 298.56-298.56 298.56A296.51 296.51 0 0 1 0 368.73a215.83 215.83 0 0 0 25.34 1.3 210.15 210.15 0 0 0 130.27-44.83 105.12 105.12 0 0 1-98.11-72.77 132.94 132.94 0 0 0 19.82 1.62 111.09 111.09 0 0 0 27.61-3.57 105 105 0 0 1-84.14-103v-1.29a105.67 105.67 0 0 0 47.43 13.31A105.07 105.07 0 0 1 35.74 19.17 298.28 298.28 0 0 0 252.1 128.98a118.78 118.78 0 0 1-2.6-24 105 105 0 0 1 181.6-71.8 206.58 206.58 0 0 0 66.6-25.34 104.61 104.61 0 0 1-46.13 57.83A210.61 210.61 0 0 0 512 49.38a225.62 225.62 0 0 1-52.63 54.26z"/>
+</svg>
+</a>
+</li>
+<li class="line">
+<a href="https://line.me/R/ti/p/@oa-wwdjapan" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+<path d="M223.3 45.6C99.7 45.6-.9 127.3-.9 227.6c0 89.9 79.7 165.3 187.5 179.6 26.3 5.6 23.2 15.3 17.3 50.6-1 5.6-4.5 22.1 19.4 12.1s129.1-76 176.3-130.2c32.4-35.7 48-71.9 48-112.1-.1-100.3-100.7-182-224.3-182zm-79.2 235.5c0 2.5-1.9 4.4-4.4 4.4H76.9c-1.2 0-2.2-.5-3-1.2-.8-.8-1.2-1.8-1.2-3v-97.8c0-2.5 1.9-4.4 4.4-4.4h15.7c2.5 0 4.4 1.9 4.4 4.4V261H140c2.3 0 4.3 2.1 4.3 4.4v15.7zm38 .2c0 2.5-1.9 4.4-4.4 4.4H162c-2.5 0-4.4-1.9-4.4-4.4v-97.8c0-2.5 1.9-4.4 4.4-4.4h15.7c2.5 0 4.4 2.1 4.4 4.4v97.8zm108.3 0c0 2.5-1.9 4.4-4.4 4.4h-15.7c-1.5 0-2.9-.8-3.6-1.8l-44.8-60.5v58c0 2.5-1.9 4.4-4.4 4.4h-15.7c-2.5 0-4.4-1.9-4.4-4.4v-97.8c0-2.5 1.9-4.4 4.4-4.4h15.5c1.4 0 2.9.7 3.6 1.9l44.8 60.5v-58c0-2.5 1.9-4.4 4.4-4.4h15.7c2.5-.1 4.5 1.9 4.5 4.3v97.8zm86.9-82.1c0 2.5-1.9 4.4-4.4 4.4h-42.8v16.5h42.8c2.5 0 4.4 1.9 4.4 4.4v15.8c0 2.5-1.9 4.4-4.4 4.4h-42.8v16.5h42.8c2.5 0 4.4 1.9 4.4 4.4v15.7c0 2.5-1.9 4.4-4.4 4.4h-62.8c-2.5 0-4.4-2.1-4.4-4.4v-97.8c0-2.5 2.1-4.4 4.4-4.4h62.8c2.3 0 4.3 2.1 4.4 4.4v15.7z"/>
+</svg>
+</a>
+</li>
+</ul>
+<p>
+Follow us
+</p>
+</div>
+
+				</div><!-- .site-info -->
+			</footer><!-- #colophon -->
+		</div><!-- #page -->
+				<style type="text/css">
+			.ssp-wave wave wave {
+				background: #d4382e !important;
+			}
+		</style>
+		<script type="text/javascript">
+jQuery(document).ready(function(){
+    setTimeout(function() {
+        var partition_key = Math.random().toString(36).slice(-8)
+        var ua = window.navigator.userAgent
+        var data = {
+            Data: {
+                post_id: 1109664,
+                meta: {
+                    ua: ua
+                }
+            },
+            PartitionKey: partition_key
+        }
+        jQuery.ajax({
+            url:'https://dzjkx8vd46.execute-api.ap-northeast-1.amazonaws.com/production/ranking',
+            type:'POST',
+            contentType: 'application/json',
+            dataType: 'json',
+            data: JSON.stringify(data)
+        })
+    }, 4000);
+});
+</script>
+<div class="gate-box">
+<div class="wwdja-pc-feature-1" id="wwdja-1235751118"><script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script> var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];</script>
+<div id="gpt-ad-6309107539202-0">
+  <script>
+    googletag.cmd.push(function() {
+      googletag.defineSlot( '/21929796191/PC/FEATUREバナー', [332,223], 'gpt-ad-6309107539202-0' )
+        .addService(googletag.pubads()).setCollapseEmptyDiv(true,true);
+		googletag.enableServices();
+		googletag.display( 'gpt-ad-6309107539202-0' );
+    });
+  </script>
+</div>
+</div>
+</div>
+		<!-- Root element of PhotoSwipe. Must have class pswp. -->
+		<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="pswp__bg"></div>
+			<div class="pswp__scroll-wrap">
+				<div class="pswp__container">
+					<div class="pswp__item"></div>
+					<div class="pswp__item"></div>
+					<div class="pswp__item"></div>
+				</div>
+				<div class="pswp__ui pswp__ui--hidden">
+					<div class="pswp__top-bar">
+						<div class="pswp__counter"></div>
+						<div class="m-gallery-pswp__brand col-tn-4 col-tn-offset-4">
+							<i class="m-gallery-pswp__logo icon-logo"></i>
+						</div>
+						<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+						<button class="pswp__button pswp__button--share" title="Share"></button>
+						<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+						<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+						<div class="pswp__preloader">
+							<div class="pswp__preloader__icn">
+								<div class="pswp__preloader__cut">
+									<div class="pswp__preloader__donut"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+						<div class="pswp__share-tooltip"></div>
+					</div>
+					<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109 50">  <polyline points="4.5 4.5 54.5 46.5 104.5 4.5" fill="transparent" stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></polyline> </svg></button>
+					<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109 50">  <polyline points="4.5 4.5 54.5 46.5 104.5 4.5" fill="transparent" stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></polyline> </svg></button>
+					<div class="pswp__caption">
+						<div class="pswp__caption__center"></div>
+						<div id="gallery_overlay"></div>
+					 </div>
+				</div>
+			</div>
+		</div><script type='text/javascript' src='https://www.wwdjapan.com/wp-content/themes/wwdj-pc/assets/js/jquery.qrcode.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/themes/wwdj-pc/assets/js/jquery.sticky-sidebar.min.js?ver=3.3.1'></script>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/wavesurfer.js?ver=fa8359129b99466ccba685a1ffe3da90'></script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/plugins/seriously-simple-podcasting/assets/js/media.player.js?ver=2.2.0'></script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/plugins/seriously-simple-podcasting/assets/js/html5.player.js?ver=2.2.0'></script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-includes/js/underscore.min.js?ver=1.8.3'></script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-includes/js/backbone.min.js?ver=1.4.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpApiSettings = {"root":"https:\/\/www.wwdjapan.com\/wp-json\/","nonce":"ca6a03f1fb","versionString":"wp\/v2\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-includes/js/api-request.min.js?ver=5.4.2'></script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-includes/js/wp-api.min.js?ver=5.4.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wwdjPayWallReadmoreStatus = {"endpoint":"https:\/\/www.wwdjapan.com\/wp-json\/wwdj\/user\/paywalls","user_id":"0","nonce":"ca6a03f1fb"};
+/* ]]> */
+</script>
+<script type='text/javascript' async="async" src='https://www.wwdjapan.com/wp-content/plugins/wwd-paywall-readmore/assets/js/script.js?ver=1598346148'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wwdjAsyncUserData = {"endpoint":"https:\/\/www.wwdjapan.com\/wp-json\/wp\/v2\/users","user_id":"0","nonce":"ca6a03f1fb"};
+var wwdjAsyncUserMypageWidget = {"endpoint":"https:\/\/www.wwdjapan.com\/wp-json\/wwdj\/user\/widget_mypage","user_id":"0","nonce":"ca6a03f1fb"};
+var wwdjAsyncSpHamburgerNavigation = {"endpoint":"https:\/\/www.wwdjapan.com\/wp-json\/wwdj\/user\/sp_hamburger_navigation","user_id":"0","nonce":"ca6a03f1fb"};
+var wwdjAsyncUserLatestSubscribeWidget = {"endpoint":"https:\/\/www.wwdjapan.com\/wp-json\/wwdj\/user\/latest_subscribe","user_id":"0","nonce":"ca6a03f1fb"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/plugins/wwd-async-user-data/assets/js/script.js?ver=1598346148'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wwdjBannerData = {"endpoint":"https:\/\/www.wwdjapan.com\/wp-json\/wwdj\/v1\/banners","nonce":"ca6a03f1fb"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/plugins/wwd-banner/assets/js/script.js?ver=1598346148'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wwdjBookmarData = {"endpoint":"https:\/\/www.wwdjapan.com\/wp-json\/wp\/v2\/users","user_id":"0","nonce":"ca6a03f1fb"};
+var wwdjBookmarStatus = {"endpoint":"https:\/\/www.wwdjapan.com\/wp-json\/wwdj\/user\/bookmarks","user_id":"0","nonce":"ca6a03f1fb"};
+/* ]]> */
+</script>
+<script type='text/javascript' async="async" src='https://www.wwdjapan.com/wp-content/plugins/wwd-bookmark/assets/js/script.js?ver=1598346148'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wwdjWWDFollowData = {"endpoint":"https:\/\/www.wwdjapan.com\/wp-json\/wp\/v2\/users","user_id":"0","nonce":"ca6a03f1fb"};
+/* ]]> */
+</script>
+<script type='text/javascript' async="async" src='https://www.wwdjapan.com/wp-content/plugins/wwd-follow/assets/js/script.js?ver=1598346148'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var advanced_ads_sticky_settings = {"check_position_fixed":"","sticky_class":"wwdja-sticky"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/plugins/advanced-ads-sticky-ads/public/assets/js/sticky.js?ver=1.7.10'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var advadsTracking = {"ajaxurl":"https:\/\/www.wwdjapan.com\/wp-admin\/admin-ajax.php","ajaxActionName":"aatrack-records","method":null,"blogId":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/plugins/advanced-ads-tracking/public/assets/js/script.js?ver=1.20.2'></script>
+<script type='text/javascript'>
+window.lazySizesConfig = window.lazySizesConfig || {};window.lazySizesConfig.init = false;
+</script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/themes/wwdj-pc/assets/js/lazysizes/lazysizes.min.js?ver=5.1.1'></script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/themes/wwdj-pc/assets/js/lazysizes/plugins/unveilhooks/ls.unveilhooks.js?ver=5.1.1'></script>
+<script type='text/javascript'>
+lazySizes.init();
+</script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/themes/wwdj-pc/assets/js/slick.min.js?ver=1.8.1'></script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-includes/js/dist/vendor/moment.min.js?ver=2.22.2'></script>
+<script type='text/javascript'>
+moment.locale( 'ja', {"months":["1\u6708","2\u6708","3\u6708","4\u6708","5\u6708","6\u6708","7\u6708","8\u6708","9\u6708","10\u6708","11\u6708","12\u6708"],"monthsShort":["1\u6708","2\u6708","3\u6708","4\u6708","5\u6708","6\u6708","7\u6708","8\u6708","9\u6708","10\u6708","11\u6708","12\u6708"],"weekdays":["\u65e5\u66dc\u65e5","\u6708\u66dc\u65e5","\u706b\u66dc\u65e5","\u6c34\u66dc\u65e5","\u6728\u66dc\u65e5","\u91d1\u66dc\u65e5","\u571f\u66dc\u65e5"],"weekdaysShort":["\u65e5","\u6708","\u706b","\u6c34","\u6728","\u91d1","\u571f"],"week":{"dow":1},"longDateFormat":{"LT":"H:i","LTS":null,"L":null,"LL":"Y\/m\/d","LLL":"Y\u5e74n\u6708j\u65e5 g:i A","LLLL":null}} );
+</script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/themes/wwdj-pc/assets/js/jquery.validate.min.js?ver=1.19.0'></script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/themes/wwdj-pc/assets/js/trunk8.js?ver=1.3.3'></script>
+<!--[if IE]>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/themes/wwdj-pc/assets/js/ofi.min.js?ver=3.2.4'></script>
+<![endif]-->
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wwdjCareerLabelData = {"endpoint":"https:\/\/www.wwdjapan.com\/wp-json\/wwdj\/v1\/career-label\/","nonce":"ca6a03f1fb"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/themes/wwdj-pc/assets/js/script.js?ver=1598346148'></script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/themes/wwdj/assets/js/photoswipe.min.js?ver=4.1.3'></script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/themes/wwdj/assets/js/photoswipe-ui-default.min.js?ver=4.1.3'></script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-content/themes/wwdj/assets/js/potoswipe-start-up.js?ver=4.1.6'></script>
+<script type='text/javascript' src='https://www.wwdjapan.com/wp-includes/js/wp-embed.min.js?ver=5.4.2'></script>
+<script>window.advads_has_ads = [["1099276","ad",null],["1099276","ad",null]];
+
+( window.advanced_ads_ready || jQuery( document ).ready ).call( null, function() {if ( window.advanced_ads_pro ) {advanced_ads_pro.process_passive_cb();} else if ( window.console && window.console.log ) {console.log('Advanced Ads Pro: cache-busting can not be initialized');} });</script><script type="text/javascript">var advads_tracking_ads = {};var advads_tracking_urls = [];var advads_gatracking_uids = [];var advads_tracking_methods = [];var advads_tracking_parallel = [];var advads_tracking_linkbases = [];var advads_gatracking_allads = [];var advads_gatracking_anonym = true;</script>	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"c9b0d0532b","applicationID":"161735829","transactionName":"ZQFTNhMCDRVUVk1cX1xLcAEVCgwIGkZQW1deAQ==","queueTime":0,"applicationTime":2006,"atts":"SUZQQFsYHhs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
+<!-- Performance optimized by Redis Object Cache. Learn more: https://wprediscache.com -->
